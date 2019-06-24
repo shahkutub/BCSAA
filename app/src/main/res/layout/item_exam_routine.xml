@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_1sdp"
+            >
+
+            <TextView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Time"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Module"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Trainer Name"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Building Name"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Venue Name"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+
+
+    </LinearLayout>
+</HorizontalScrollView>

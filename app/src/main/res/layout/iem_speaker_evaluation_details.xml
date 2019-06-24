@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Speaker Parameter Name"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#fff"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Total Marks"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Get Marks"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+
+
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/tvCourseName"
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Course Name"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:id="@+id/tvBachNo"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Batch No"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Participant Name"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="From Date"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="To Date"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Purpose"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Status"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <LinearLayout
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/tv_bg"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/view_bg"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:paddingTop="@dimen/_3sdp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:src="@drawable/ic_check_black_24dp"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/view_bg_red"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:paddingTop="@dimen/_3sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:src="@drawable/ic_cancel_black_24dp"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</HorizontalScrollView>

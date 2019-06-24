@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#16957C"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ic_left_black_24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Speaker"
+            android:textColor="#fff"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/linUploadClick"
+            />
+
+        <LinearLayout
+            android:id="@+id/linUploadClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/view_bg"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/_5sdp"
+            >
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_add_circle_black_24dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add speaker"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/_10sdp"
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:orientation="horizontal"
+            android:background="@drawable/spinner_bg"
+            >
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spinnerNameType"
+                android:layout_width="0dp"
+                android:layout_weight=".7"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/_5sdp"
+                android:inputType="textCapSentences"
+                android:background="@drawable/spinner_bg"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight=".5"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+
+            </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="horizontal"
+        android:background="@drawable/spinner_bg"
+        >
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Designation"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Working Place"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/etDesignation"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/etWorkingPlace"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:inputType="textCapSentences"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile No"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Office Phone"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/etMobile"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:inputType="phone"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:inputType="phone"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_height="match_parent" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm Password"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/etPass"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/etConPass"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CV"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                android:background="@drawable/spinner_bg"
+                >
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chose File"
+                        />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/spinner_bg"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chose File"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:paddingLeft="@dimen/_20sdp"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:background="@drawable/view_bg"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

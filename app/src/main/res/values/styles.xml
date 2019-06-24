@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:dropDownListViewStyle">@style/popup</item>
+        <item name="drawerArrowStyle">@style/DrawerIconStyle</item>
+    </style>
+
+    <style name="popup" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">@color/colorPrimary</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:itemBackground">@android:color/white</item>
+    </style>
+
+    <style name="DrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/paribarikAin"
+        android:title="Lecture upload (TM -> MS -> LU)"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+
+    <item
+        android:title="Participant's Leave (TM -> MP -> ML)"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+
+    <item
+        android:title="Participant Attendance (TM -> MA -> PA)"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:title="Speaker List (TM -> MS -> MGS)"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+</menu>

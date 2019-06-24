@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/classRoutine"
+        android:title="Class Routine"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/classcContent"
+        android:title="Class Content by CMT"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/attendancePlan"
+            android:title="Weekly Attendance Plan"
+            android:orderInCategory="100"
+            app:showAsAction="never" />
+
+    <item android:id="@+id/examRoutine"
+            android:title="Exam Routine"
+            android:orderInCategory="100"
+            app:showAsAction="never" />
+    <item android:id="@+id/speakerEvaluation"
+                android:title="Speaker Evaluation"
+                android:orderInCategory="100"
+                app:showAsAction="never" />
+
+</menu>

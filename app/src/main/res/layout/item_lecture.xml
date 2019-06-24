@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <TextView
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Course Name"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Batch No"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Module Name"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Session Name"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+        <TextView
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Action"
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+
+    </LinearLayout>
+
+</HorizontalScrollView>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#16957C"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ic_left_black_24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lecture Upload"
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            />
+
+        <LinearLayout
+            android:id="@+id/linUploadClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/view_bg"
+            android:padding="@dimen/_5sdp"
+            >
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_add_circle_black_24dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Name"
+        android:textColor="#000"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/spinner_bg"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        >
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spnCourseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Batch no"
+        android:textColor="#000"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/spinner_bg"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        >
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spnBachNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linUpload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Module Name"
+            android:textColor="#000"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/spinner_bg"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            >
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spnModuleName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Session No"
+            android:textColor="#000"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/spinner_bg"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            >
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+
+                android:id="@+id/spnSessionNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="File"
+            android:textColor="#000"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_2sdp"
+            android:background="@drawable/spinner_bg"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chose File"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+
+                    <TextView
+                        android:layout_width="@dimen/_230sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="Course Name"
+                        android:background="#5A6268"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        />
+
+                    <TextView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="Batch No"
+                        android:background="#5A6268"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:layout_marginLeft="@dimen/_1sdp"
+                        />
+
+                    <TextView
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="Module Name"
+                        android:background="#5A6268"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:layout_marginLeft="@dimen/_1sdp"
+                        />
+                    <TextView
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="Session Name"
+                        android:background="#5A6268"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:layout_marginLeft="@dimen/_1sdp"
+                        />
+
+                    <TextView
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="Action"
+                        android:background="#5A6268"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:layout_marginLeft="@dimen/_1sdp"
+                        />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/recyclerView"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

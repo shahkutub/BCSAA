@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#005522"
+        android:layout_alignParentTop="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Faculty Dashboard"
+                android:textColor="#fff"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="jj"
+            android:background="@drawable/view_bg"
+            android:textSize="@dimen/_15sdp"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:textColor="#fff"
+            />
+
+        <DigitalClock
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:background="@drawable/view_bg_red"
+            android:textColor="#fff"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_15sdp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
