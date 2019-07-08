@@ -10,24 +10,15 @@
         android:layout_width="match_parent"
         android:visibility="visible"
         android:layout_height="?attr/actionBarSize"
-        android:background="#005522"
+        android:background="#2CA089"
         android:layout_alignParentTop="true"
         >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <include
+            layout="@layout/top_bar"
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Faculty Dashboard"
-                android:textColor="#fff"
-                android:textSize="@dimen/_15sdp"
-                android:textStyle="bold"
-                />
-
-        </RelativeLayout>
+        </include>
 
     </android.support.v7.widget.Toolbar>
 

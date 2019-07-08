@@ -52,6 +52,17 @@
 
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,16 +110,34 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
     <LinearLayout
+        android:id="@+id/linSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        >
+     <Button
+         android:id="@+id/btnSearch"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:background="@drawable/view_bg"
+         android:text="Search"
+         android:textColor="#fff"
+         android:paddingLeft="@dimen/_20sdp"
+         android:paddingRight="@dimen/_20sdp"
+         />
+
+    </LinearLayout>
+
+            <LinearLayout
         android:id="@+id/linUpload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="visible"
-
+        android:visibility="gone"
         >
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -180,16 +209,36 @@
                 android:layout_height="wrap_content"
                 android:text="Chose File"
                 />
-
-
         </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    >
+                    <Button
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/view_bg"
+                        android:text="Submit"
+                        android:textColor="#fff"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:paddingRight="@dimen/_20sdp"
+                        />
+
+                </LinearLayout>
 
     </LinearLayout>
 
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/_5sdp"
+        android:visibility="gone"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -259,10 +308,12 @@
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:id="@+id/recyclerView"
-                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+                android:layout_height="@dimen/_250sdp"></android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
 
     </HorizontalScrollView>
+        </LinearLayout>
 
+    </ScrollView>
 </LinearLayout>

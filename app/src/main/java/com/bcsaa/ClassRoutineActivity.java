@@ -1,14 +1,15 @@
 package com.bcsaa;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +19,30 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bcsaa.model.ClassRoutineInfo;
+import com.bcsaa.model.ClassRoutineResponse;
+import com.bcsaa.model.LoginResponse;
 import com.bcsaa.model.RoutineData;
+import com.bcsaa.utils.AlertMessage;
+import com.bcsaa.utils.Api;
+import com.bcsaa.utils.AppConstant;
+import com.bcsaa.utils.NetInfo;
+import com.bcsaa.utils.PersistentUser;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ClassRoutineActivity extends AppCompatActivity {
 
     Context context;
     private ImageView imgBack;
+    ClassRoutineResponse classRoutineResponse = new ClassRoutineResponse();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,25 +62,62 @@ public class ClassRoutineActivity extends AppCompatActivity {
             }
         });
 
-        RoutineData routineData = new RoutineData();
-        List<RoutineData> myListData = new ArrayList<>();
-        for (int i = 0; i <5 ; i++) {
+        Log.e("auth","{\"logged_session_data\": "+AppConstant.getLogged_session_data(context)+"}");
+        getRoutineList();
 
-            myListData.add(routineData);
-        }
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        MyListAdapter adapter = new MyListAdapter(myListData);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
 
     }
+
+    private void getRoutineList() {
+
+        if(!NetInfo.isOnline(context)){
+            AlertMessage.showMessage(context,"Alert!","No internet connection!");
+        }
+
+        final ProgressDialog pd = new ProgressDialog(context);
+        pd.setMessage("Loading....");
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.show();
+
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        Api api = retrofit.create(Api.class);
+        Call<ClassRoutineResponse> userCall = api.participant_class_routine_view("{\"logged_session_data\": "+AppConstant.getLogged_session_data(context)+"}");
+        userCall.enqueue(new Callback<ClassRoutineResponse>() {
+            @Override
+            public void onResponse(Call<ClassRoutineResponse> call, Response<ClassRoutineResponse> response) {
+                pd.dismiss();
+
+                classRoutineResponse =response.body();
+
+                if(classRoutineResponse.getData()!= null){
+                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                    MyListAdapter adapter = new MyListAdapter(classRoutineResponse.getData());
+                    recyclerView.setHasFixedSize(true);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                    recyclerView.setAdapter(adapter);
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ClassRoutineResponse> call, Throwable t) {
+                pd.dismiss();
+            }
+        });
+
+    }
+
     public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
-        private List<RoutineData> listdata = new ArrayList<>();
+        private List<ClassRoutineInfo> listdata = new ArrayList<>();
 
         // RecyclerView recyclerView;
-        public MyListAdapter(List<RoutineData> listdata) {
+        public MyListAdapter(List<ClassRoutineInfo> listdata) {
             this.listdata = listdata;
         }
         @Override
@@ -77,11 +130,15 @@ public class ClassRoutineActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            final RoutineData myListData = listdata.get(position);
+            final ClassRoutineInfo myListData = listdata.get(position);
 
+            holder.tvCourseName.setText(myListData.getCourse_name());
+            holder.tvBachNo.setText(myListData.getBatch_no());
+            holder.tvDate.setText(myListData.getDate());
             holder.linView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    AppConstant.grouprandomRutine = myListData.getGrouprandom();
                     startActivity(new Intent(context,RoutineDetailActivity.class));
                 }
             });
@@ -94,13 +151,13 @@ public class ClassRoutineActivity extends AppCompatActivity {
         }
 
         public  class ViewHolder extends RecyclerView.ViewHolder {
-            public ImageView imageView;
-            public TextView textView;
+            public TextView tvCourseName,tvBachNo,tvDate;
             public LinearLayout linView;
             public ViewHolder(View itemView) {
                 super(itemView);
-//                this.imageView = (ImageView) itemView.findViewById(R.id.imageView);
-//                this.textView = (TextView) itemView.findViewById(R.id.textView);
+                this.tvCourseName = (TextView) itemView.findViewById(R.id.tvCourseName);
+                this.tvBachNo = (TextView) itemView.findViewById(R.id.tvBachNo);
+                this.tvDate = (TextView) itemView.findViewById(R.id.tvDate);
                 linView = (LinearLayout) itemView.findViewById(R.id.linView);
             }
         }
