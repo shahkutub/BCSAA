@@ -26,9 +26,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exam Schedule List"
-            android:layout_centerInParent="true"
             android:textColor="#fff"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imgBack"
+            android:layout_toLeftOf="@+id/linDownload"
             />
+
+        <LinearLayout
+            android:id="@+id/linDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:background="@drawable/view_bg"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/ic_file_download_black_24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
     </RelativeLayout>
 
     <HorizontalScrollView

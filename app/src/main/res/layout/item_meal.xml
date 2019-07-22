@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_100sdp"
+    android:layout_height="@dimen/_80sdp"
+    android:background="#000"
+    android:gravity="center"
+    android:layout_marginTop="@dimen/_1sdp"
+    >
+    <TextView
+        android:id="@+id/tvMealName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Breakfast"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="@dimen/_15sdp"
+        />
+
+</LinearLayout>

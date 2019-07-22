@@ -11,6 +11,7 @@
             >
 
             <TextView
+                android:id="@+id/tvTime"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:text="Time"
@@ -20,6 +21,7 @@
                 />
 
             <TextView
+                android:id="@+id/tvModule"
                 android:layout_width="@dimen/_250sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:text="Module"
@@ -30,6 +32,7 @@
                 />
 
             <TextView
+                android:id="@+id/tvTrainerName"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:text="Trainer Name"
@@ -40,6 +43,7 @@
                 />
 
             <TextView
+                android:id="@+id/tvBuildingName"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:text="Building Name"
@@ -50,6 +54,7 @@
                 />
 
             <TextView
+                android:id="@+id/tvVenueName"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:text="Venue Name"

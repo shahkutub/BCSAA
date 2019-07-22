@@ -9,6 +9,7 @@
         >
 
         <TextView
+            android:id="@+id/tvCourseName"
             android:layout_width="@dimen/_230sdp"
             android:layout_height="@dimen/_40sdp"
             android:text="Course Name"
@@ -19,6 +20,7 @@
             />
 
         <TextView
+            android:id="@+id/tvBachNo"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_40sdp"
             android:text="Batch No"

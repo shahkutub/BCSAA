@@ -64,7 +64,7 @@
                     android:singleLine="true"
                     android:hint="Email"
                     android:background="@drawable/edit_bg"
-                    android:text="rumpa.sikder31@gmail.com"
+                    android:text="moinul35ac@gmai.com"
                     android:padding="@dimen/_10sdp"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
@@ -81,6 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:singleLine="true"
+                    android:text="as"
                     android:drawableTint="#FF4081"
                     android:background="@drawable/edit_bg"
                     android:padding="@dimen/_10sdp"

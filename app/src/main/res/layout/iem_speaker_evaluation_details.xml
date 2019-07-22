@@ -7,39 +7,35 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
-
         <TextView
+            android:id="@+id/tvParamName"
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_40sdp"
-            android:text="Speaker Parameter Name"
+            android:text=""
             android:background="@drawable/tv_bg"
             android:gravity="center"
-            android:textColor="#fff"
+            android:textColor="#000"
             />
-
         <TextView
+            android:id="@+id/tvTotalMark"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_40sdp"
-            android:text="Total Marks"
+            android:text=""
             android:background="@drawable/tv_bg"
             android:gravity="center"
-            android:textColor="#fff"
+            android:textColor="#000"
             android:layout_marginLeft="@dimen/_1sdp"
             />
-
         <TextView
+            android:id="@+id/tvGetMark"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_40sdp"
-            android:text="Get Marks"
+            android:text=""
             android:background="@drawable/tv_bg"
             android:gravity="center"
-            android:textColor="#fff"
+            android:textColor="#000"
             android:layout_marginLeft="@dimen/_1sdp"
             />
-
-
-
-
 
     </LinearLayout>
 </LinearLayout>

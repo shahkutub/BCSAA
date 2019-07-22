@@ -31,9 +31,142 @@
             />
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Name:"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvCourseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="normal"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Module Name:"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvModuleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="normal"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Speaker Name:"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvSpeakerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="normal"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batch No:"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvBachName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="normal"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Session Name:"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvSessionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="normal"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+    </LinearLayout>
+
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"

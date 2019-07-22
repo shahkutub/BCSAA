@@ -13,6 +13,9 @@ public class AppConstant {
 
 
     public static String grouprandomRutine;
+    public static String sessionId;
+    public static String activitiName;
+    public static String weekId;
 
     public static void saveLoginUserdat(Context con, Logged_session_data loginData) {
         SharedPreferences mPrefs = con.getSharedPreferences("Logged_session_data",MODE_PRIVATE);
@@ -24,14 +27,14 @@ public class AppConstant {
 
     }
 
-//    public static LoginResponse getLoginUserdat(Context con){
-//        SharedPreferences mPrefs = con.getSharedPreferences("loginUserdata",MODE_PRIVATE);
-//        LoginResponse loginData = new LoginResponse();
-//        Gson gson = new Gson();
-//        String json = mPrefs.getString("loginUserdata", "");
-//        loginData = gson.fromJson(json,LoginResponse.class);
-//        return loginData;
-//    }
+    public static Logged_session_data getLoginUserdat(Context con){
+        SharedPreferences mPrefs = con.getSharedPreferences("Logged_session_data",MODE_PRIVATE);
+        Logged_session_data loginData = new Logged_session_data();
+        Gson gson = new Gson();
+        String json = mPrefs.getString("Logged_session_data", "");
+        loginData = gson.fromJson(json,Logged_session_data.class);
+        return loginData;
+    }
 
     public static String getLogged_session_data(Context con){
         SharedPreferences mPrefs = con.getSharedPreferences("Logged_session_data",MODE_PRIVATE);

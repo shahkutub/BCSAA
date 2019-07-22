@@ -25,10 +25,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weekly Attendance Plan List"
-            android:layout_centerInParent="true"
+            android:text="Weekly Attendance Plan"
             android:textColor="#fff"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imgBack"
+            android:layout_toLeftOf="@+id/linDownload"
             />
+
+        <LinearLayout
+            android:id="@+id/linAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:background="@drawable/view_bg"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/ic_add_circle_black_24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
     </RelativeLayout>
 
     <HorizontalScrollView

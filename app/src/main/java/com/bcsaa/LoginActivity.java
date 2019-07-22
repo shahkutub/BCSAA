@@ -45,7 +45,22 @@ public class LoginActivity extends AppCompatActivity {
 
         context = this;
 
-        initUi();
+        if(PersistentUser.isLogged(context)){
+            if(AppConstant.getLoginUserdat(context).getUsertype()!=null){
+                if(AppConstant.getLoginUserdat(context).getUsertype().equalsIgnoreCase("participant")){
+                    startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                }else {
+                    startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                }
+            }
+
+
+        }else {
+            initUi();
+        }
+
+
+
     }
 
     private void initUi() {
@@ -71,6 +86,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(context, "Input password.", Toast.LENGTH_SHORT).show();
                     etPass.requestFocus();
                 }else {
+
+                    //startActivity(new Intent(context,DashBoardFacultyActivity.class));
                     login(email,pass);
                 }
 

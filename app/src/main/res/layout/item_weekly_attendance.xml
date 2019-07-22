@@ -9,6 +9,7 @@
         >
 
         <TextView
+            android:id="@+id/tvMonthYar"
             android:layout_width="@dimen/_230sdp"
             android:layout_height="@dimen/_40sdp"
             android:text="Month-Year"
@@ -42,6 +43,7 @@
                     android:gravity="center"
                     android:textColor="#fff"
                     android:layout_marginLeft="@dimen/_1sdp"
+                    android:src="@drawable/ic_mode_edit_black_24dp"
                     />
             </LinearLayout>
 

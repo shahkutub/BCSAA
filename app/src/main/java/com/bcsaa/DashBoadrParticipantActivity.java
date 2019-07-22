@@ -11,6 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bcsaa.utils.AppConstant;
+import com.bcsaa.utils.PersistentUser;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -33,6 +36,9 @@ class DashBoadrParticipantActivity extends AppCompatActivity{
     }
 
     private void initUi() {
+
+        TextView tvParticipantName = (TextView)findViewById(R.id.tvParticipantName);
+        tvParticipantName.setText(AppConstant.getLoginUserdat(context).getName());
 
         TextView tvDate = (TextView)findViewById(R.id.tvDate);
 
@@ -103,6 +109,7 @@ class DashBoadrParticipantActivity extends AppCompatActivity{
             startActivity(new Intent(context,SpekerEvalutionActivity.class));
         }
     public void onClickLogOutKortipokko(View v){
+        PersistentUser.logOut(context);
         finish();
     }
 

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -130,6 +131,7 @@ public class RoutineDetailActivity extends AppCompatActivity {
             holder.tvTrainerName.setText(myListData.getTrainer_name());
             holder.tvVenueName.setText(myListData.getVenue_name());
 
+
         }
 
 
@@ -149,6 +151,7 @@ public class RoutineDetailActivity extends AppCompatActivity {
                 this.tvTrainerName = (TextView) itemView.findViewById(R.id.tvTrainerName);
                 this.tvBuildingName = (TextView) itemView.findViewById(R.id.tvBuildingName);
                 this.tvVenueName = (TextView) itemView.findViewById(R.id.tvVenueName);
+                tvSession.setMovementMethod(new ScrollingMovementMethod());
             }
         }
     }
