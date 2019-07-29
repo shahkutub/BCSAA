@@ -78,7 +78,7 @@ public class ParticipantAddWeek extends AppCompatActivity {
         if(AppConstant.activitiName.equalsIgnoreCase("edit")){
             Log.e("weekId",""+AppConstant.weekId);
             linWeak.setVisibility(View.GONE);
-            participantweeklyattendanceplangetmonthmeal(AppConstant.weekId);
+            participant_weekly_attendance_edit(AppConstant.weekId);
             linMealView.setVisibility(View.VISIBLE);
         }
 
@@ -227,6 +227,75 @@ public class ParticipantAddWeek extends AppCompatActivity {
         });
 
     }
+
+    private void participant_weekly_attendance_edit(String weekId) {
+
+        if(!NetInfo.isOnline(context)){
+            AlertMessage.showMessage(context,"Alert!","No internet connection!");
+        }
+
+        final ProgressDialog pd = new ProgressDialog(context);
+        pd.setMessage("Loading...");
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        Api api = retrofit.create(Api.class);
+        Call<ParticipantMealAttendanceRespons> userCall = api.participant_weekly_attendance_edit("{\"logged_session_data\": "+ AppConstant.getLogged_session_data(context)+"}", weekId);
+        userCall.enqueue(new Callback<ParticipantMealAttendanceRespons>() {
+            @Override
+            public void onResponse(Call<ParticipantMealAttendanceRespons> call, Response<ParticipantMealAttendanceRespons> response) {
+                pd.dismiss();
+                participantMealAttendanceRespons =response.body();
+                if(participantMealAttendanceRespons.getTable_head()!= null){
+                    linMealView.setVisibility(View.VISIBLE);
+
+                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDaysHeader);
+                    HeaderListAdapter adapter = new HeaderListAdapter(participantMealAttendanceRespons.getTable_head());
+                    recyclerView.setHasFixedSize(true);
+                    LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+                    recyclerView.setLayoutManager(layoutManager);
+                    recyclerView.setAdapter(adapter);
+
+
+                }
+
+                if(participantMealAttendanceRespons.getMeal_time()!=null){
+                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMealse);
+                    MealNameListAdapter adapter = new MealNameListAdapter(participantMealAttendanceRespons.getMeal_time());
+                    recyclerView.setHasFixedSize(true);
+                    LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                    recyclerView.setLayoutManager(layoutManager);
+                    recyclerView.setAdapter(adapter);
+
+
+
+                    AttenendListAdapter adapterrAttend = new AttenendListAdapter(participantMealAttendanceRespons.getMeal_time());
+                    RecyclerView recyclerViewAttend = (RecyclerView) findViewById(R.id.recyclerViewAttend);
+                    recyclerViewAttend.setHasFixedSize(true);
+                    LinearLayoutManager layoutManagerAttend = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                    recyclerViewAttend.setLayoutManager(layoutManagerAttend);
+                    recyclerViewAttend.setAdapter(adapterrAttend);
+                }
+
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ParticipantMealAttendanceRespons> call, Throwable t) {
+                pd.dismiss();
+            }
+        });
+
+    }
+
+
 
     private void participantweeklyattendancestore(String auth_data,String meal_time_id, String date, String attend, String weekId) {
 

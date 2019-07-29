@@ -132,9 +132,9 @@ public class ClassRoutineActivity extends AppCompatActivity {
         public void onBindViewHolder(ViewHolder holder, int position) {
             final ClassRoutineInfo myListData = listdata.get(position);
 
-            holder.tvCourseName.setText(myListData.getCourse_name());
-            holder.tvBachNo.setText(myListData.getBatch_no());
             holder.tvDate.setText(myListData.getDate());
+            holder.tvStartTime.setText(myListData.getMin_time());
+            holder.tvEndTime.setText(myListData.getMax_time());
             holder.linView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -151,13 +151,13 @@ public class ClassRoutineActivity extends AppCompatActivity {
         }
 
         public  class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView tvCourseName,tvBachNo,tvDate;
+            public TextView tvDate,tvStartTime,tvEndTime;
             public LinearLayout linView;
             public ViewHolder(View itemView) {
                 super(itemView);
-                this.tvCourseName = (TextView) itemView.findViewById(R.id.tvCourseName);
-                this.tvBachNo = (TextView) itemView.findViewById(R.id.tvBachNo);
                 this.tvDate = (TextView) itemView.findViewById(R.id.tvDate);
+                this.tvStartTime = (TextView) itemView.findViewById(R.id.tvStartTime);
+                this.tvEndTime = (TextView) itemView.findViewById(R.id.tvEndTime);
                 linView = (LinearLayout) itemView.findViewById(R.id.linView);
             }
         }

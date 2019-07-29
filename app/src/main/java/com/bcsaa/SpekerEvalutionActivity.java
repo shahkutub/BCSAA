@@ -76,11 +76,11 @@ public class SpekerEvalutionActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             final SpeakerEvaluData myListData = listdata.get(position);
-            holder.tvCourseName.setText(myListData.getCourse_name());
-            holder.tvBach.setText(myListData.getBatch_name());
-            holder.tvSession.setText(myListData.getSession_name());
-            holder.tvSpeakerType.setText(myListData.getSpeakertype_name());
-            holder.tvSpeakerName.setText(myListData.getUser_name());
+//            holder.tvCourseName.setText(myListData.getCourse_name());
+//            holder.tvBach.setText(myListData.getBatch_name());
+//            holder.tvSession.setText(myListData.getSession_name());
+//            holder.tvSpeakerType.setText(myListData.getSpeakertype_name());
+//            holder.tvSpeakerName.setText(myListData.getUser_name());
 
 
             holder.linView.setOnClickListener(new View.OnClickListener() {
@@ -103,12 +103,12 @@ public class SpekerEvalutionActivity extends AppCompatActivity {
             public LinearLayout linView;
             public ViewHolder(View itemView) {
                 super(itemView);
-                this.tvCourseName = (TextView) itemView.findViewById(R.id.tvCourseName);
-                this.tvBach = (TextView) itemView.findViewById(R.id.tvBach);
-                this.tvSession = (TextView) itemView.findViewById(R.id.tvSession);
-                this.tvSpeakerType = (TextView) itemView.findViewById(R.id.tvSpeakerType);
-                this.tvSpeakerName = (TextView) itemView.findViewById(R.id.tvSpeakerName);
-                linView = (LinearLayout) itemView.findViewById(R.id.linView);
+//                this.tvCourseName = (TextView) itemView.findViewById(R.id.tvCourseName);
+//                this.tvBach = (TextView) itemView.findViewById(R.id.tvBach);
+//                this.tvSession = (TextView) itemView.findViewById(R.id.tvSession);
+//                this.tvSpeakerType = (TextView) itemView.findViewById(R.id.tvSpeakerType);
+//                this.tvSpeakerName = (TextView) itemView.findViewById(R.id.tvSpeakerName);
+//                linView = (LinearLayout) itemView.findViewById(R.id.linView);
             }
         }
     }

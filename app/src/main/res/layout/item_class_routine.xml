@@ -9,41 +9,42 @@
         >
 
         <TextView
-            android:id="@+id/tvCourseName"
-            android:layout_width="@dimen/_230sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:text="Course Name"
-            android:background="@drawable/tv_bg"
-            android:gravity="center"
-            android:textColor="#000"
-
-            />
-
-        <TextView
-            android:id="@+id/tvBachNo"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:text="Batch No"
-            android:background="@drawable/tv_bg"
-            android:gravity="center"
-            android:textColor="#000"
-            android:layout_marginLeft="@dimen/_1sdp"
-            />
-
-        <TextView
             android:id="@+id/tvDate"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_40sdp"
-            android:text="Date"
+            android:text=""
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+
+            />
+
+        <TextView
+            android:id="@+id/tvStartTime"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text=""
             android:background="@drawable/tv_bg"
             android:gravity="center"
             android:textColor="#000"
             android:layout_marginLeft="@dimen/_1sdp"
             />
 
+        <TextView
+            android:id="@+id/tvEndTime"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text=""
+            android:background="@drawable/tv_bg"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_1sdp"
+            />
+
+
         <LinearLayout
             android:id="@+id/linView"
-            android:layout_width="@dimen/_100sdp"
+            android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_40sdp"
             android:background="@drawable/tv_bg"
             android:orientation="horizontal"

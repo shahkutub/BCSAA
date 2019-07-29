@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Time"
+                android:background="@drawable/tv_bg"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/_3sdp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:id="@+id/tvModule"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Module"
+                android:background="@drawable/tv_bg"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/_3sdp"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:id="@+id/tvSession"
+                android:layout_width="@dimen/_300sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Session"
+                android:background="@drawable/tv_bg"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/_3sdp"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:id="@+id/tvTrainer"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Trainer Name"
+                android:background="@drawable/tv_bg"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/_3sdp"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:id="@+id/tvBuilding"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Building Name"
+                android:background="@drawable/tv_bg"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/_3sdp"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:id="@+id/tvVenue"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Venue Name"
+                android:background="@drawable/tv_bg"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/_3sdp"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+        </LinearLayout>
+    </HorizontalScrollView>

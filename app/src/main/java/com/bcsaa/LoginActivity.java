@@ -49,11 +49,12 @@ public class LoginActivity extends AppCompatActivity {
             if(AppConstant.getLoginUserdat(context).getUsertype()!=null){
                 if(AppConstant.getLoginUserdat(context).getUsertype().equalsIgnoreCase("participant")){
                     startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                    finish();
                 }else {
                     startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                    finish();
                 }
             }
-
 
         }else {
             initUi();
@@ -75,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                 //showAuthDialog();
                 email = etEmail.getText().toString();
                 pass = etPass.getText().toString();
-
+                //startActivity(new Intent(context,DashBoardFacultyActivity.class));
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(context, "Input email address.", Toast.LENGTH_SHORT).show();
                     etEmail.requestFocus();
@@ -130,11 +131,13 @@ public class LoginActivity extends AppCompatActivity {
                         PersistentUser.setLogin(context);
                         AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
                         startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                        finish();
 
                     }else {
                         PersistentUser.setLogin(context);
                         AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
                         startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                        finish();
                     }
 
                 }else {

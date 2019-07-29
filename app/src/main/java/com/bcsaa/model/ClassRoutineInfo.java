@@ -2,28 +2,12 @@ package com.bcsaa.model;
 
 public class ClassRoutineInfo {
 
-//    "course_name": "Law and Administration Course",
-////            "batch_no": 110,
-////            "date": "26-02-2019",
-////            "grouprandom": "155107314026"
+//"date": "14-07-2019",
+//            "min_time": "07:45:00",
+//            "max_time": "21:00:00",
+//            "grouprandom": "26-2019-07-14"
 
-    String course_name,batch_no,date,grouprandom;
-
-    public String getCourse_name() {
-        return course_name;
-    }
-
-    public void setCourse_name(String course_name) {
-        this.course_name = course_name;
-    }
-
-    public String getBatch_no() {
-        return batch_no;
-    }
-
-    public void setBatch_no(String batch_no) {
-        this.batch_no = batch_no;
-    }
+    String date,min_time,max_time,grouprandom;
 
     public String getDate() {
         return date;
@@ -31,6 +15,22 @@ public class ClassRoutineInfo {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getMin_time() {
+        return min_time;
+    }
+
+    public void setMin_time(String min_time) {
+        this.min_time = min_time;
+    }
+
+    public String getMax_time() {
+        return max_time;
+    }
+
+    public void setMax_time(String max_time) {
+        this.max_time = max_time;
     }
 
     public String getGrouprandom() {

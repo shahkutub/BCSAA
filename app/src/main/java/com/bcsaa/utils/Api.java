@@ -7,6 +7,7 @@ import com.bcsaa.model.LoginResponse;
 import com.bcsaa.model.PartiSpeakerEvaluAddResponse;
 import com.bcsaa.model.PartiSpeakerEvaluResponse;
 import com.bcsaa.model.ParticipantCourseContentResponse;
+import com.bcsaa.model.ParticipantDashboardRespons;
 import com.bcsaa.model.ParticipantExamScheduleRespons;
 import com.bcsaa.model.ParticipantMealAttendanceRespons;
 import com.bcsaa.model.ParticipantWeeklyAttendancePlanViewRespons;
@@ -69,6 +70,14 @@ public interface Api {
             @Field("auth_data") String auth_data
     );
 
+
+    @FormUrlEncoded
+    @POST("api/dashboard")
+    Call<ParticipantDashboardRespons> participant_dashboard(
+            @Field("auth_data") String auth_data
+    );
+
+
     @FormUrlEncoded
     @POST("api/participant-speaker-evaluation")
     Call<PartiSpeakerEvaluResponse> participant_speaker_evaluation(
@@ -100,6 +109,14 @@ public interface Api {
     @FormUrlEncoded
     @POST("api/participant-weekly-attendance-plan-get-month-meal")
     Call<ParticipantMealAttendanceRespons> participantweeklyattendanceplangetmonthmeal(
+            @Field("auth_data") String auth_data,
+            @Field("week") String week
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/participant-weekly-attendance-edit")
+    Call<ParticipantMealAttendanceRespons> participant_weekly_attendance_edit(
             @Field("auth_data") String auth_data,
             @Field("week") String week
     );

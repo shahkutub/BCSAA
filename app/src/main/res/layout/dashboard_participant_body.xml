@@ -78,9 +78,10 @@
                 />
 
             <TextView
+                android:id="@+id/tvNameCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Law and Administration Course"
+                android:text=""
                 android:layout_marginLeft="@dimen/_10sdp"
                 />
 
@@ -102,9 +103,10 @@
                 />
 
             <TextView
+                android:id="@+id/tvNameBach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LAC110"
+                android:text=""
                 android:textStyle="normal"
                 android:layout_marginLeft="@dimen/_10sdp"
                 />
@@ -117,28 +119,45 @@
            android:background="@color/colorPrimary"
            android:layout_marginTop="@dimen/_5sdp"
            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewCmt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            ></android.support.v7.widget.RecyclerView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/_10sdp"
             android:gravity="center_vertical"
             >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course Adviser : "
+                android:text="Male Dress:"
                 android:textStyle="bold"
                 android:layout_marginLeft="@dimen/_10sdp"
                 />
 
             <TextView
+                android:id="@+id/tvMaleDress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LAC110"
+                android:text=""
                 android:textStyle="normal"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
                 />
 
         </LinearLayout>
@@ -146,65 +165,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/_10sdp"
             android:gravity="center_vertical"
             >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course Director : "
+                android:text="Female Dress:"
                 android:textStyle="bold"
                 android:layout_marginLeft="@dimen/_10sdp"
                 />
 
             <TextView
+                android:id="@+id/tvFemaleDress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LAC110"
+                android:text=""
                 android:textStyle="normal"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
                 />
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:gravity="center_vertical"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Course Coordinator "
-                android:textStyle="bold"
-                android:layout_marginLeft="@dimen/_10sdp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LAC110"
-                android:textStyle="normal"
-                android:layout_marginLeft="@dimen/_10sdp"
-                />
-
-        </LinearLayout>
-
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp"
         android:gravity="center_vertical"
         >
         <ImageView
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:src="@drawable/clock"
             />
 
@@ -223,12 +215,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
 
+
             <TextView
-                android:layout_width="@dimen/_200sdp"
+                android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:text="Time"
                 android:background="#5A6268"
@@ -267,7 +264,7 @@
                 />
 
             <TextView
-                android:layout_width="@dimen/_200sdp"
+                android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:text="Building Name"
                 android:background="#5A6268"
@@ -277,7 +274,7 @@
                 />
 
             <TextView
-                android:layout_width="@dimen/_200sdp"
+                android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:text="Venue Name"
                 android:background="#5A6268"
@@ -287,8 +284,12 @@
                 />
 
 
+        </LinearLayout>
 
-
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
         </LinearLayout>
     </HorizontalScrollView>
 
