@@ -149,14 +149,15 @@ public class ExamRoutineActivity extends AppCompatActivity {
 
                 participantExamScheduleRespons =response.body();
 
-                if(participantExamScheduleRespons.getData()!= null){
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-                    MyListAdapter adapter = new MyListAdapter(participantExamScheduleRespons.getData());
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    recyclerView.setAdapter(adapter);
+                if(participantExamScheduleRespons!=null){
+                    if(participantExamScheduleRespons.getData()!= null){
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                        MyListAdapter adapter = new MyListAdapter(participantExamScheduleRespons.getData());
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                        recyclerView.setAdapter(adapter);
+                    }
                 }
-
 
             }
 

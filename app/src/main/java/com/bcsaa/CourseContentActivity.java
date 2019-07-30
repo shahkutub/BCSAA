@@ -86,13 +86,16 @@ public class CourseContentActivity extends AppCompatActivity {
 
                 participantCourseContentResponse =response.body();
 
-                if(participantCourseContentResponse.getData()!= null){
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-                    MyListAdapter adapter = new MyListAdapter(participantCourseContentResponse.getData());
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    recyclerView.setAdapter(adapter);
+                if(participantCourseContentResponse!=null){
+                    if(participantCourseContentResponse.getData()!= null){
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                        MyListAdapter adapter = new MyListAdapter(participantCourseContentResponse.getData());
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                        recyclerView.setAdapter(adapter);
+                    }
                 }
+
 
 
             }

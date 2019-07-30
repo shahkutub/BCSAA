@@ -18,6 +18,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bcsaa.utils.PersistentUser;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -30,7 +32,7 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-class DashBoardFacultyActivity extends AppCompatActivity{
+public class DashBoardFacultyActivity extends AppCompatActivity{
     Context context;
 
     private Toolbar toolbar;
@@ -119,7 +121,9 @@ class DashBoardFacultyActivity extends AppCompatActivity{
         startActivity(new Intent(context,SpeakerListActivity.class));
         }
 
-        public void onClickLogOutKortipokko(View v){
+        public void onClickLogOutFaculty(View v){
+
+            PersistentUser.logOut(context);
                 finish();
                 }
 

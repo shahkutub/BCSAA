@@ -85,14 +85,15 @@ public class RoutineDetailActivity extends AppCompatActivity {
 
                 classRoutineDeatilseResponse =response.body();
 
-                if(classRoutineDeatilseResponse.getData()!= null){
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-                    MyListAdapter adapter = new MyListAdapter(classRoutineDeatilseResponse.getData());
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    recyclerView.setAdapter(adapter);
+                if(classRoutineDeatilseResponse!=null){
+                    if(classRoutineDeatilseResponse.getData()!= null){
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                        MyListAdapter adapter = new MyListAdapter(classRoutineDeatilseResponse.getData());
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                        recyclerView.setAdapter(adapter);
+                    }
                 }
-
 
             }
 
@@ -105,7 +106,7 @@ public class RoutineDetailActivity extends AppCompatActivity {
     }
 
 
-    public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
+    private class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
         private List<ClassRoutineDetailseInfo> listdata = new ArrayList<>();
 
         // RecyclerView recyclerView;

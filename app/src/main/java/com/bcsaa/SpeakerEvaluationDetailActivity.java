@@ -89,20 +89,25 @@ public class SpeakerEvaluationDetailActivity extends AppCompatActivity {
             public void onResponse(Call<PartiSpeakerEvaluAddResponse> call, Response<PartiSpeakerEvaluAddResponse> response) {
                 pd.dismiss();
                 partiSpeakerEvaluAddResponse =response.body();
-                if(partiSpeakerEvaluAddResponse.getData()!= null){
 
-                    tvBachName.setText(partiSpeakerEvaluAddResponse.getData().getBatch_no());
-                    tvCourseName.setText(partiSpeakerEvaluAddResponse.getData().getCourse_name());
-                    tvModuleName.setText(partiSpeakerEvaluAddResponse.getData().getModule_name());
-                    tvSessionName.setText(partiSpeakerEvaluAddResponse.getData().getSession_name());
-                    tvSpeakerName.setText(partiSpeakerEvaluAddResponse.getData().getSpeaker_name());
+                if(partiSpeakerEvaluAddResponse!=null){
+                    if(partiSpeakerEvaluAddResponse.getData()!= null){
 
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-                    MyListAdapter adapter = new MyListAdapter(partiSpeakerEvaluAddResponse.getData().getEvaluation());
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    recyclerView.setAdapter(adapter);
+                        tvBachName.setText(partiSpeakerEvaluAddResponse.getData().getBatch_no());
+                        tvCourseName.setText(partiSpeakerEvaluAddResponse.getData().getCourse_name());
+                        tvModuleName.setText(partiSpeakerEvaluAddResponse.getData().getModule_name());
+                        tvSessionName.setText(partiSpeakerEvaluAddResponse.getData().getSession_name());
+                        tvSpeakerName.setText(partiSpeakerEvaluAddResponse.getData().getSpeaker_name());
+
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                        MyListAdapter adapter = new MyListAdapter(partiSpeakerEvaluAddResponse.getData().getEvaluation());
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                        recyclerView.setAdapter(adapter);
+                    }
                 }
+
+
 
             }
 
@@ -133,7 +138,7 @@ public class SpeakerEvaluationDetailActivity extends AppCompatActivity {
         public void onBindViewHolder(ViewHolder holder, int position) {
             final Evaluation myListData = listdata.get(position);
 
-            //holder.tvGetMark.setText(myListData.getTotal_marks());
+            holder.tvGetMark.setText(myListData.getTotal_marks());
             holder.tvTotalMark.setText(myListData.getTotal_marks());
             holder.tvParamName.setText(myListData.getParameter_name());
 

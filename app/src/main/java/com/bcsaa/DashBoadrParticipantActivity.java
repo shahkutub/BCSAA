@@ -39,7 +39,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-class DashBoadrParticipantActivity extends AppCompatActivity{
+public class DashBoadrParticipantActivity extends AppCompatActivity{
     Context context;
 
     private Toolbar toolbar;
@@ -59,8 +59,8 @@ class DashBoadrParticipantActivity extends AppCompatActivity{
 
     private void initUi() {
 
-        TextView tvParticipantName = (TextView)findViewById(R.id.tvParticipantName);
-        tvParticipantName.setText(AppConstant.getLoginUserdat(context).getName());
+        TextView tvUserName = (TextView)findViewById(R.id.tvUserName);
+        tvUserName.setText(AppConstant.getLoginUserdat(context).getName());
 
         TextView tvDate = (TextView)findViewById(R.id.tvDate);
         tvNameCourse = (TextView)findViewById(R.id.tvNameCourse);
@@ -71,7 +71,7 @@ class DashBoadrParticipantActivity extends AppCompatActivity{
         Date c = Calendar.getInstance().getTime();
         System.out.println("Current time => " + c);
 
-        SimpleDateFormat df = new SimpleDateFormat("EEE, MMM d, yy");
+        SimpleDateFormat df = new SimpleDateFormat("EEE, d MMM , yy");
         String formattedDate = df.format(c);
         tvDate.setText(formattedDate);
         participant_dashboard();
@@ -188,8 +188,6 @@ class DashBoadrParticipantActivity extends AppCompatActivity{
                             recyclerViewSchedule.setLayoutManager(new LinearLayoutManager(context));
                             recyclerViewSchedule.setAdapter(adapterSchedule);
                         }
-
-
 
                     }
                 }

@@ -140,14 +140,18 @@ public class WeeklyAttendanceActivity extends AppCompatActivity {
             public void onResponse(Call<ParticipantWeeklyAttendancePlanViewRespons> call, Response<ParticipantWeeklyAttendancePlanViewRespons> response) {
                 pd.dismiss();
                 participantWeeklyAttendancePlanViewRespons =response.body();
-                if(participantWeeklyAttendancePlanViewRespons.getData()!= null){
 
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-                    MyListAdapter adapter = new MyListAdapter(participantWeeklyAttendancePlanViewRespons.getData());
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    recyclerView.setAdapter(adapter);
+                if(participantWeeklyAttendancePlanViewRespons!=null){
+                    if(participantWeeklyAttendancePlanViewRespons.getData()!= null){
+
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                        MyListAdapter adapter = new MyListAdapter(participantWeeklyAttendancePlanViewRespons.getData());
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                        recyclerView.setAdapter(adapter);
+                    }
                 }
+
 
             }
 

@@ -59,7 +59,7 @@
                 <TextView
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_40sdp"
-                    android:text="Session No"
+                    android:text="Session Name"
                     android:background="#5A6268"
                     android:gravity="center"
                     android:textColor="#fff"
@@ -69,7 +69,7 @@
                 <TextView
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_40sdp"
-                    android:text="Seaker Type"
+                    android:text="Speaker Type"
                     android:background="#5A6268"
                     android:gravity="center"
                     android:textColor="#fff"
@@ -79,7 +79,7 @@
                 <TextView
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_40sdp"
-                    android:text="Seaker Name"
+                    android:text="Speaker Name"
                     android:background="#5A6268"
                     android:gravity="center"
                     android:textColor="#fff"

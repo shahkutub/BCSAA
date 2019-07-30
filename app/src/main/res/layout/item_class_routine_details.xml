@@ -14,7 +14,7 @@
             <TextView
                 android:id="@+id/tvTime"
                 android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:text="Time"
                 android:background="@drawable/tv_bg"
                 android:gravity="center"
@@ -24,7 +24,7 @@
             <TextView
                 android:id="@+id/tvModule"
                 android:layout_width="@dimen/_250sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:text="Module"
                 android:background="@drawable/tv_bg"
                 android:gravity="center"
@@ -35,7 +35,7 @@
             <TextView
                 android:id="@+id/tvSession"
                 android:layout_width="@dimen/_300sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center"
                 android:background="@drawable/tv_bg"
                 android:ellipsize="end"
@@ -46,7 +46,7 @@
             <TextView
                 android:id="@+id/tvTrainerName"
                 android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:text="Trainer Name"
                 android:background="@drawable/tv_bg"
                 android:gravity="center"
@@ -57,7 +57,7 @@
             <TextView
                 android:id="@+id/tvBuildingName"
                 android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:text="Building Name"
                 android:background="@drawable/tv_bg"
                 android:gravity="center"
@@ -68,7 +68,7 @@
             <TextView
                 android:id="@+id/tvVenueName"
                 android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:text="Venue Name"
                 android:background="@drawable/tv_bg"
                 android:gravity="center"

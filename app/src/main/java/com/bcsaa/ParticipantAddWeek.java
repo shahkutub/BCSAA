@@ -125,30 +125,34 @@ public class ParticipantAddWeek extends AppCompatActivity {
             public void onResponse(Call<ParticipantWeeklyAttendancePlanViewRespons> call, Response<ParticipantWeeklyAttendancePlanViewRespons> response) {
                 pd.dismiss();
                 participantWeeklyAttendancePlanViewRespons =response.body();
-                if(participantWeeklyAttendancePlanViewRespons.getData()!= null){
+
+                if(participantWeeklyAttendancePlanViewRespons!=null){
+                    if(participantWeeklyAttendancePlanViewRespons.getData()!= null){
 
 
+                        SpinnerModel select = new SpinnerModel();
+                        select.setName("Select week");
 
-                    SpinnerModel select = new SpinnerModel();
-                    select.setName("Select week");
 
+                        listWeek.add(0,select);
 
-                    listWeek.add(0,select);
+                        for (ParticipantWeeklyAttendancePlanViewData data:participantWeeklyAttendancePlanViewRespons.getData()) {
+                            SpinnerModel spinnerData = new SpinnerModel();
+                            spinnerData.setName(data.getWeek_lenth());
+                            spinnerData.setId(data.getWeek_id());
+                            listWeek.add(spinnerData);
 
-                    for (ParticipantWeeklyAttendancePlanViewData data:participantWeeklyAttendancePlanViewRespons.getData()) {
-                        SpinnerModel spinnerData = new SpinnerModel();
-                        spinnerData.setName(data.getWeek_lenth());
-                        spinnerData.setId(data.getWeek_id());
-                        listWeek.add(spinnerData);
+                        }
 
+                        CustomSpinnerAdapter spinneradapter = new CustomSpinnerAdapter(ParticipantAddWeek.this,
+                                R.layout.spinner_item, R.id.title, listWeek);
+                        spnWeek.setAdapter(spinneradapter);
+                        spnWeek.setTitle("Select Item");
+                        spnWeek.setPositiveButton("OK");
                     }
-
-                    CustomSpinnerAdapter spinneradapter = new CustomSpinnerAdapter(ParticipantAddWeek.this,
-                            R.layout.spinner_item, R.id.title, listWeek);
-                    spnWeek.setAdapter(spinneradapter);
-                    spnWeek.setTitle("Select Item");
-                    spnWeek.setPositiveButton("OK");
                 }
+
+
 
             }
 
@@ -184,36 +188,41 @@ public class ParticipantAddWeek extends AppCompatActivity {
             public void onResponse(Call<ParticipantMealAttendanceRespons> call, Response<ParticipantMealAttendanceRespons> response) {
                 pd.dismiss();
                 participantMealAttendanceRespons =response.body();
-                if(participantMealAttendanceRespons.getTable_head()!= null){
-                    linMealView.setVisibility(View.VISIBLE);
 
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDaysHeader);
-                    HeaderListAdapter adapter = new HeaderListAdapter(participantMealAttendanceRespons.getTable_head());
-                    recyclerView.setHasFixedSize(true);
-                    LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-                    recyclerView.setLayoutManager(layoutManager);
-                    recyclerView.setAdapter(adapter);
+                if(participantMealAttendanceRespons!=null){
+                    if(participantMealAttendanceRespons.getTable_head()!= null){
+                        linMealView.setVisibility(View.VISIBLE);
+
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDaysHeader);
+                        HeaderListAdapter adapter = new HeaderListAdapter(participantMealAttendanceRespons.getTable_head());
+                        recyclerView.setHasFixedSize(true);
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setAdapter(adapter);
 
 
+                    }
+
+                    if(participantMealAttendanceRespons.getMeal_time()!=null){
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMealse);
+                        MealNameListAdapter adapter = new MealNameListAdapter(participantMealAttendanceRespons.getMeal_time());
+                        recyclerView.setHasFixedSize(true);
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setAdapter(adapter);
+
+
+
+                        AttenendListAdapter adapterrAttend = new AttenendListAdapter(participantMealAttendanceRespons.getMeal_time());
+                        RecyclerView recyclerViewAttend = (RecyclerView) findViewById(R.id.recyclerViewAttend);
+                        recyclerViewAttend.setHasFixedSize(true);
+                        LinearLayoutManager layoutManagerAttend = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                        recyclerViewAttend.setLayoutManager(layoutManagerAttend);
+                        recyclerViewAttend.setAdapter(adapterrAttend);
+                    }
                 }
 
-                if(participantMealAttendanceRespons.getMeal_time()!=null){
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMealse);
-                    MealNameListAdapter adapter = new MealNameListAdapter(participantMealAttendanceRespons.getMeal_time());
-                    recyclerView.setHasFixedSize(true);
-                    LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-                    recyclerView.setLayoutManager(layoutManager);
-                    recyclerView.setAdapter(adapter);
 
-
-
-                    AttenendListAdapter adapterrAttend = new AttenendListAdapter(participantMealAttendanceRespons.getMeal_time());
-                    RecyclerView recyclerViewAttend = (RecyclerView) findViewById(R.id.recyclerViewAttend);
-                    recyclerViewAttend.setHasFixedSize(true);
-                    LinearLayoutManager layoutManagerAttend = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-                    recyclerViewAttend.setLayoutManager(layoutManagerAttend);
-                    recyclerViewAttend.setAdapter(adapterrAttend);
-                }
 
 
 
@@ -251,37 +260,39 @@ public class ParticipantAddWeek extends AppCompatActivity {
             public void onResponse(Call<ParticipantMealAttendanceRespons> call, Response<ParticipantMealAttendanceRespons> response) {
                 pd.dismiss();
                 participantMealAttendanceRespons =response.body();
-                if(participantMealAttendanceRespons.getTable_head()!= null){
-                    linMealView.setVisibility(View.VISIBLE);
 
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDaysHeader);
-                    HeaderListAdapter adapter = new HeaderListAdapter(participantMealAttendanceRespons.getTable_head());
-                    recyclerView.setHasFixedSize(true);
-                    LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-                    recyclerView.setLayoutManager(layoutManager);
-                    recyclerView.setAdapter(adapter);
+                if(participantMealAttendanceRespons!=null){
+                    if(participantMealAttendanceRespons.getTable_head()!= null){
+                        linMealView.setVisibility(View.VISIBLE);
+
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDaysHeader);
+                        HeaderListAdapter adapter = new HeaderListAdapter(participantMealAttendanceRespons.getTable_head());
+                        recyclerView.setHasFixedSize(true);
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setAdapter(adapter);
 
 
+                    }
+
+                    if(participantMealAttendanceRespons.getMeal_time()!=null){
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMealse);
+                        MealNameListAdapter adapter = new MealNameListAdapter(participantMealAttendanceRespons.getMeal_time());
+                        recyclerView.setHasFixedSize(true);
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setAdapter(adapter);
+
+
+
+                        AttenendListAdapter adapterrAttend = new AttenendListAdapter(participantMealAttendanceRespons.getMeal_time());
+                        RecyclerView recyclerViewAttend = (RecyclerView) findViewById(R.id.recyclerViewAttend);
+                        recyclerViewAttend.setHasFixedSize(true);
+                        LinearLayoutManager layoutManagerAttend = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                        recyclerViewAttend.setLayoutManager(layoutManagerAttend);
+                        recyclerViewAttend.setAdapter(adapterrAttend);
+                    }
                 }
-
-                if(participantMealAttendanceRespons.getMeal_time()!=null){
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMealse);
-                    MealNameListAdapter adapter = new MealNameListAdapter(participantMealAttendanceRespons.getMeal_time());
-                    recyclerView.setHasFixedSize(true);
-                    LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-                    recyclerView.setLayoutManager(layoutManager);
-                    recyclerView.setAdapter(adapter);
-
-
-
-                    AttenendListAdapter adapterrAttend = new AttenendListAdapter(participantMealAttendanceRespons.getMeal_time());
-                    RecyclerView recyclerViewAttend = (RecyclerView) findViewById(R.id.recyclerViewAttend);
-                    recyclerViewAttend.setHasFixedSize(true);
-                    LinearLayoutManager layoutManagerAttend = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-                    recyclerViewAttend.setLayoutManager(layoutManagerAttend);
-                    recyclerViewAttend.setAdapter(adapterrAttend);
-                }
-
 
 
 
@@ -320,9 +331,13 @@ public class ParticipantAddWeek extends AppCompatActivity {
             public void onResponse(Call<AttendanceStoreResponse> call, Response<AttendanceStoreResponse> response) {
                 pd.dismiss();
                 AttendanceStoreResponse  attendanceStoreResponse =response.body();
-                if(attendanceStoreResponse.getData()!= null){
-                    Toast.makeText(context, ""+attendanceStoreResponse.getSuccessmsg(), Toast.LENGTH_SHORT).show();
+
+                if(attendanceStoreResponse!=null){
+                    if(attendanceStoreResponse.getData()!= null){
+                        Toast.makeText(context, ""+attendanceStoreResponse.getSuccessmsg(), Toast.LENGTH_SHORT).show();
+                    }
                 }
+
 
             }
 

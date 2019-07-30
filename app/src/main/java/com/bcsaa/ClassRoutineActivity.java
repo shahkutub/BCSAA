@@ -94,13 +94,16 @@ public class ClassRoutineActivity extends AppCompatActivity {
 
                 classRoutineResponse =response.body();
 
-                if(classRoutineResponse.getData()!= null){
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-                    MyListAdapter adapter = new MyListAdapter(classRoutineResponse.getData());
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    recyclerView.setAdapter(adapter);
+                if(classRoutineResponse!=null){
+                    if(classRoutineResponse.getData()!= null){
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                        MyListAdapter adapter = new MyListAdapter(classRoutineResponse.getData());
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                        recyclerView.setAdapter(adapter);
+                    }
                 }
+
 
 
             }

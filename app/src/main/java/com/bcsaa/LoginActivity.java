@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -23,6 +24,9 @@ import com.bcsaa.utils.NetInfo;
 import com.bcsaa.utils.PersistData;
 import com.bcsaa.utils.PersistentUser;
 
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,8 +39,13 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etEmail,etPass;
     private String email,pass;
 
-    private Button btnSignin;
+    private AppCompatButton btnSignin;
     LoginResponse loginrepons = new LoginResponse();
+
+    //moinul35ac@gmai.com
+    //as
+    //ddpdbcsadminacademy.gov.bd
+    //as
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 
         etEmail = (EditText)findViewById(R.id.etEmail);
         etPass = (EditText)findViewById(R.id.etPass);
-        btnSignin = (Button)findViewById(R.id.btnSignin);
+        btnSignin = (AppCompatButton)findViewById(R.id.btnSignin);
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,8 +119,21 @@ public class LoginActivity extends AppCompatActivity {
         pd.show();
 
 
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(1, TimeUnit.MINUTES)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .build();
+
+//        Retrofit.Builder retrofit = new Retrofit.Builder()
+//                .baseUrl("http://10.0.2.2:3000/")
+//                .client(okHttpClient)
+//                .addConverterFactory(GsonConverterFactory.create());
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Api.BASE_URL)
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -123,33 +145,36 @@ public class LoginActivity extends AppCompatActivity {
                 pd.dismiss();
 
                 loginrepons =response.body();
+                if(loginrepons!=null){
+                    if(loginrepons.getLogged_session_data()!=null){
+                        Toast.makeText(context, ""+loginrepons.getSuccessmsg(), Toast.LENGTH_SHORT).show();
 
-                if(loginrepons.getLogged_session_data()!=null){
-                    Toast.makeText(context, ""+loginrepons.getSuccessmsg(), Toast.LENGTH_SHORT).show();
+                        if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
+                            PersistentUser.setLogin(context);
+                            AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
+                            startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                            finish();
 
-                    if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
-                        PersistentUser.setLogin(context);
-                        AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                        startActivity(new Intent(context,DashBoadrParticipantActivity.class));
-                        finish();
+                        }else {
+                            PersistentUser.setLogin(context);
+                            AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
+                            startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                            finish();
+                        }
 
                     }else {
-                        PersistentUser.setLogin(context);
-                        AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                        startActivity(new Intent(context,DashBoardFacultyActivity.class));
-                        finish();
+                        Toast.makeText(context, ""+loginrepons.getErrormsg(), Toast.LENGTH_SHORT).show();
                     }
 
-                }else {
-                    Toast.makeText(context, ""+loginrepons.getErrormsg(), Toast.LENGTH_SHORT).show();
-                }
 
-
-                if(loginrepons.getAuthentication_access().equalsIgnoreCase("yes")){
-                    if(loginrepons.getAuthentication_info()!=null){
-                        showAuthDialog();
+                    if(loginrepons.getAuthentication_access().equalsIgnoreCase("yes")){
+                        if(loginrepons.getAuthentication_info()!=null){
+                            showAuthDialog();
+                        }
                     }
                 }
+
+
 
 
             }
@@ -237,30 +262,35 @@ public class LoginActivity extends AppCompatActivity {
 
                 loginrepons =response.body();
 
-                if(loginrepons.getLogged_session_data()!=null){
-                    Toast.makeText(context, ""+loginrepons.getSuccessmsg(), Toast.LENGTH_SHORT).show();
+                if(loginrepons!=null){
+                    if(loginrepons.getLogged_session_data()!=null){
+                        Toast.makeText(context, ""+loginrepons.getSuccessmsg(), Toast.LENGTH_SHORT).show();
 
-                    if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
-                        PersistentUser.setLogin(context);
-                        AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                        startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                        if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
+                            PersistentUser.setLogin(context);
+                            AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
+                            startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                            finish();
+
+                        }else {
+                            PersistentUser.setLogin(context);
+                            AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
+                            startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                            finish();
+                        }
 
                     }else {
-                        PersistentUser.setLogin(context);
-                        AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                        startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                        Toast.makeText(context, ""+loginrepons.getErrormsg(), Toast.LENGTH_SHORT).show();
                     }
 
-                }else {
-                    Toast.makeText(context, ""+loginrepons.getErrormsg(), Toast.LENGTH_SHORT).show();
-                }
 
-
-                if(loginrepons.getAuthentication_access().equalsIgnoreCase("yes")){
-                    if(loginrepons.getAuthentication_info()!=null){
-                        showAuthDialog();
+                    if(loginrepons.getAuthentication_access().equalsIgnoreCase("yes")){
+                        if(loginrepons.getAuthentication_info()!=null){
+                            showAuthDialog();
+                        }
                     }
                 }
+
 
 
             }

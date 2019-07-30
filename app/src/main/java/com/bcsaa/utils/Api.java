@@ -21,8 +21,8 @@ import retrofit2.http.POST;
 
 public interface Api {
 
-    String BASE_URL = "http://192.168.0.124/bcsaa/";
-    //String BASE_URL = "http://123.49.41.11/";
+    //String BASE_URL = "http://192.168.0.124/bcsaa/";
+    String BASE_URL = "http://123.49.41.11/";
 
 
     @FormUrlEncoded

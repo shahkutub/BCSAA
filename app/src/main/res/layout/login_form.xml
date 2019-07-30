@@ -64,7 +64,7 @@
                     android:singleLine="true"
                     android:hint="Email"
                     android:background="@drawable/edit_bg"
-                    android:text="moinul35ac@gmai.com"
+                    android:text=""
                     android:padding="@dimen/_10sdp"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:singleLine="true"
-                    android:text="as"
+                    android:text=""
                     android:drawableTint="#FF4081"
                     android:background="@drawable/edit_bg"
                     android:padding="@dimen/_10sdp"
@@ -98,7 +98,7 @@
                 android:text="Forgot Password?" />
 
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnSignin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

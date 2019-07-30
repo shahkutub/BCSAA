@@ -58,7 +58,7 @@ public class SpekerEvalutionActivity extends AppCompatActivity {
         participant_exam_schedule();
 
     }
-    public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
+    private class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
         private List<SpeakerEvaluData> listdata = new ArrayList<>();
 
         // RecyclerView recyclerView;
@@ -76,12 +76,10 @@ public class SpekerEvalutionActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             final SpeakerEvaluData myListData = listdata.get(position);
-//            holder.tvCourseName.setText(myListData.getCourse_name());
-//            holder.tvBach.setText(myListData.getBatch_name());
-//            holder.tvSession.setText(myListData.getSession_name());
-//            holder.tvSpeakerType.setText(myListData.getSpeakertype_name());
-//            holder.tvSpeakerName.setText(myListData.getUser_name());
-
+            holder.tvNameModule.setText(myListData.getModule_name());
+            holder.tvSessionNo.setText(myListData.getSession_name());
+            holder.tvSpeakerType.setText(myListData.getSpeakertype_name());
+            holder.tvSpeakerName.setText(myListData.getUser_name());
 
             holder.linView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -99,16 +97,15 @@ public class SpekerEvalutionActivity extends AppCompatActivity {
         }
 
         public  class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView tvCourseName,tvBach,tvSession,tvSpeakerType,tvSpeakerName;
+            public TextView tvNameModule,tvSessionNo,tvSpeakerType,tvSpeakerName;
             public LinearLayout linView;
             public ViewHolder(View itemView) {
                 super(itemView);
-//                this.tvCourseName = (TextView) itemView.findViewById(R.id.tvCourseName);
-//                this.tvBach = (TextView) itemView.findViewById(R.id.tvBach);
-//                this.tvSession = (TextView) itemView.findViewById(R.id.tvSession);
-//                this.tvSpeakerType = (TextView) itemView.findViewById(R.id.tvSpeakerType);
-//                this.tvSpeakerName = (TextView) itemView.findViewById(R.id.tvSpeakerName);
-//                linView = (LinearLayout) itemView.findViewById(R.id.linView);
+                this.tvNameModule = (TextView) itemView.findViewById(R.id.tvNameModule);
+                this.tvSessionNo = (TextView) itemView.findViewById(R.id.tvSessionNo);
+                this.tvSpeakerType = (TextView) itemView.findViewById(R.id.tvSpeakerType);
+                this.tvSpeakerName = (TextView) itemView.findViewById(R.id.tvSpeakerName);
+                linView = (LinearLayout) itemView.findViewById(R.id.linView);
             }
         }
     }
@@ -136,13 +133,17 @@ public class SpekerEvalutionActivity extends AppCompatActivity {
             public void onResponse(Call<PartiSpeakerEvaluResponse> call, Response<PartiSpeakerEvaluResponse> response) {
                 pd.dismiss();
                 partiSpeakerEvaluResponse =response.body();
-                if(partiSpeakerEvaluResponse.getData()!= null){
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-                    MyListAdapter adapter = new MyListAdapter(partiSpeakerEvaluResponse.getData());
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    recyclerView.setAdapter(adapter);
+
+                if(partiSpeakerEvaluResponse!=null){
+                    if(partiSpeakerEvaluResponse.getData()!= null){
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                        MyListAdapter adapter = new MyListAdapter(partiSpeakerEvaluResponse.getData());
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                        recyclerView.setAdapter(adapter);
+                    }
                 }
+
 
             }
 
