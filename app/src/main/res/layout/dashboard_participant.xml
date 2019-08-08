@@ -169,6 +169,20 @@
 
 
 
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_Leave_Application"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColor="#000"
+                    android:padding="@dimen/_10sdp"
+                    android:onClick="onClickLeaveApplication"
+                    android:gravity="left|center"
+                    android:textSize="@dimen/_11sdp"
+                    android:text="Leave Application"/>
+
+
+
 
 
             </LinearLayout>

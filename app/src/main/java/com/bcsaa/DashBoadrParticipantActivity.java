@@ -136,6 +136,14 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
      public void onClickSpeakerEvaluation(View v){
             startActivity(new Intent(context,SpekerEvalutionActivity.class));
         }
+
+
+     public void onClickLeaveApplication(View v){
+            startActivity(new Intent(context,ParticipantLeaveApplicationAdd.class));
+        }
+
+
+
     public void onClickLogOutKortipokko(View v){
         PersistentUser.logOut(context);
         finish();
