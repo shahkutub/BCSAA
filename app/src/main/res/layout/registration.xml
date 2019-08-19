@@ -25,6 +25,7 @@
         android:layout_below="@+id/login_title"
         android:layout_width="match_parent"
         android:gravity="center"
+        android:visibility="gone"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -54,7 +55,44 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTint="#FF4081"
+                    android:singleLine="true"
+                    android:hint="Name"
+                    android:background="@drawable/edit_bg"
+                    android:text=""
+                    android:padding="@dimen/_10sdp"
+                    android:inputType="textCapSentences" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etMobile"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTint="#FF4081"
+                    android:singleLine="true"
+                    android:hint="Mobile"
+                    android:background="@drawable/edit_bg"
+                    android:text=""
+                    android:padding="@dimen/_10sdp"
+                    android:inputType="phone" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp">
 
                 <EditText
                     android:id="@+id/etEmail"
@@ -64,7 +102,7 @@
                     android:singleLine="true"
                     android:hint="Email"
                     android:background="@drawable/edit_bg"
-                    android:text="developer@gmail.com"
+                    android:text=""
                     android:padding="@dimen/_10sdp"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
@@ -72,20 +110,38 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 app:passwordToggleEnabled="true"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/etPass"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
                     android:singleLine="true"
-                    android:text="123456"
+                    android:text=""
                     android:drawableTint="#FF4081"
                     android:background="@drawable/edit_bg"
                     android:padding="@dimen/_10sdp"
                     android:hint="Password"
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                app:passwordToggleEnabled="true"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etConfirmPass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text=""
+                    android:drawableTint="#FF4081"
+                    android:background="@drawable/edit_bg"
+                    android:padding="@dimen/_10sdp"
+                    android:hint="Confirm Password"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
@@ -99,15 +155,39 @@
 
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btnSignin"
+                android:id="@+id/btnReg"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_22sdp"
-                android:background="#d67601"
-                android:text="Sign in"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:layout_marginRight="@dimen/_22sdp"
+                android:layout_marginLeft="@dimen/_22sdp"                android:background="#d67601"
+                android:text="Register"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_22sdp"
+                android:layout_marginRight="@dimen/_22sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+
+                    />
+
+            </LinearLayout>
+
         </LinearLayout>
     </RelativeLayout>
 

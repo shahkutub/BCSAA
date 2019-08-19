@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#2CA089"
+    android:orientation="horizontal"
+    android:padding="@dimen/_2sdp"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgUser"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:src="@drawable/ic_user"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:layout_alignParentLeft="true"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dashboard"
+        android:textColor="#fff"
+        android:textSize="@dimen/_15sdp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/relNotifiView"
+        android:layout_toRightOf="@+id/imgUser"
+
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/relNotifiView"
+        android:layout_width="@dimen/_50sdp"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_height="@dimen/_40sdp">
+
+
+        <ImageView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_notifications"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30"
+            android:textColor="#fff"
+            android:textSize="@dimen/_10sdp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@drawable/stockcountbg"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

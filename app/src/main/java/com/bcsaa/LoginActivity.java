@@ -57,10 +57,12 @@ public class LoginActivity extends AppCompatActivity {
         if(PersistentUser.isLogged(context)){
             if(AppConstant.getLoginUserdat(context).getUsertype()!=null){
                 if(AppConstant.getLoginUserdat(context).getUsertype().equalsIgnoreCase("participant")){
-                    startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                    //startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                    startActivity(new Intent(context,DashboardHRActivity.class));
                     finish();
                 }else {
-                    startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                    //startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                    startActivity(new Intent(context,DashboardHRActivity.class));
                     finish();
                 }
             }
@@ -152,13 +154,15 @@ public class LoginActivity extends AppCompatActivity {
                         if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
                             PersistentUser.setLogin(context);
                             AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                            startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                            //startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                            startActivity(new Intent(context,DashboardHRActivity.class));
                             finish();
 
                         }else {
                             PersistentUser.setLogin(context);
                             AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                            startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                            //startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                            startActivity(new Intent(context,DashboardHRActivity.class));
                             finish();
                         }
 

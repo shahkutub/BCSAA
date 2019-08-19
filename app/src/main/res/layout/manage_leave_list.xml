@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="#16957C"
@@ -20,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Leave Application List"
+            android:text="Manage Leave Application"
             android:layout_centerInParent="true"
             android:textColor="#fff"
             />
@@ -33,6 +34,7 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/view_bg"
             android:padding="@dimen/_5sdp"
+            android:visibility="gone"
             >
             <ImageView
                 android:layout_width="@dimen/_20sdp"
@@ -51,8 +53,6 @@
 
 
     </RelativeLayout>
-
-
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -78,9 +78,37 @@
                     android:textColor="#fff"
                     />
                 <TextView
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="Course Name"
+                    android:background="#5A6268"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    />
+                <TextView
                     android:layout_width="@dimen/_150sdp"
                     android:layout_height="@dimen/_40sdp"
-                    android:text="Start Date"
+                    android:text="Bach No"
+                    android:background="#5A6268"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    />
+
+                <TextView
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="Participant Name"
+                    android:background="#5A6268"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    />
+                <TextView
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="Form Date"
                     android:background="#5A6268"
                     android:gravity="center"
                     android:textColor="#fff"
@@ -96,6 +124,7 @@
                     android:layout_marginLeft="@dimen/_1sdp"
                     />
 
+                />
                 <TextView
                     android:layout_width="@dimen/_150sdp"
                     android:layout_height="@dimen/_40sdp"
@@ -105,17 +134,18 @@
                     android:textColor="#fff"
                     android:layout_marginLeft="@dimen/_1sdp"
                     />
+
                 <TextView
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_40sdp"
-                android:text="Status"
-                android:background="#5A6268"
-                android:gravity="center"
-                android:textColor="#fff"
-                android:layout_marginLeft="@dimen/_1sdp"
-                />
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="Status"
+                    android:background="#5A6268"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    />
                 <TextView
-                    android:layout_width="@dimen/_100sdp"
+                    android:layout_width="@dimen/_120sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Action"
                     android:background="#5A6268"
@@ -127,16 +157,13 @@
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerViewParticipantLeaveList"
+                android:id="@+id/recyclerViewManageLeaveList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
-                ></android.support.v7.widget.RecyclerView>
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
 
     </HorizontalScrollView>
-
 
 
 </LinearLayout>

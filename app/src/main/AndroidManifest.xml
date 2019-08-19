@@ -88,6 +88,28 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
+            <activity
+                        android:name=".ParticipantLeaveApplicationActivity"
+                        android:screenOrientation="portrait"
+                        android:windowSoftInputMode="adjustPan" />
+
+
+            <activity
+                        android:name=".ManageLeaveListActivity"
+                        android:screenOrientation="portrait"
+                        android:windowSoftInputMode="adjustPan" />
+
+         <activity
+                                android:name=".OfficerListActivity"
+                                android:screenOrientation="portrait"
+                                android:windowSoftInputMode="adjustPan" />
+
+
+         <activity
+                                android:name=".DashboardHRActivity"
+                                android:screenOrientation="portrait"
+                                android:windowSoftInputMode="adjustPan" />
+
 
         <activity android:name=".ParticipantAddWeek"></activity>
 

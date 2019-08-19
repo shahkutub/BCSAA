@@ -3,6 +3,7 @@ package com.bcsaa.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.bcsaa.model.LeaveInfo;
 import com.bcsaa.model.Logged_session_data;
 import com.bcsaa.model.LoginResponse;
 import com.google.gson.Gson;
@@ -16,6 +17,7 @@ public class AppConstant {
     public static String sessionId;
     public static String activitiName;
     public static String weekId;
+    public static LeaveInfo perticipantLeaveInfo = new LeaveInfo();
 
     public static void saveLoginUserdat(Context con, Logged_session_data loginData) {
         SharedPreferences mPrefs = con.getSharedPreferences("Logged_session_data",MODE_PRIVATE);

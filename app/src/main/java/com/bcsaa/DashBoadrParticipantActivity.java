@@ -14,13 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bcsaa.model.CmtInfo;
 import com.bcsaa.model.DailyDchedule;
 import com.bcsaa.model.ParticipantDashboardRespons;
-import com.bcsaa.model.RoutineData;
 import com.bcsaa.utils.AlertMessage;
 import com.bcsaa.utils.Api;
 import com.bcsaa.utils.AppConstant;
@@ -139,7 +137,7 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
 
 
      public void onClickLeaveApplication(View v){
-            startActivity(new Intent(context,ParticipantLeaveApplicationAdd.class));
+            startActivity(new Intent(context,ParticipantLeaveApplicationActivity.class));
         }
 
 

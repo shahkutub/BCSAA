@@ -3,12 +3,15 @@ package com.bcsaa.utils;
 import com.bcsaa.model.AttendanceStoreResponse;
 import com.bcsaa.model.ClassRoutineDeatilseResponse;
 import com.bcsaa.model.ClassRoutineResponse;
+import com.bcsaa.model.CommonData;
+import com.bcsaa.model.CommonResponse;
 import com.bcsaa.model.LoginResponse;
 import com.bcsaa.model.PartiSpeakerEvaluAddResponse;
 import com.bcsaa.model.PartiSpeakerEvaluResponse;
 import com.bcsaa.model.ParticipantCourseContentResponse;
 import com.bcsaa.model.ParticipantDashboardRespons;
 import com.bcsaa.model.ParticipantExamScheduleRespons;
+import com.bcsaa.model.ParticipantLeaveListResponse;
 import com.bcsaa.model.ParticipantMealAttendanceRespons;
 import com.bcsaa.model.ParticipantWeeklyAttendancePlanViewRespons;
 
@@ -21,8 +24,8 @@ import retrofit2.http.POST;
 
 public interface Api {
 
-    //String BASE_URL = "http://192.168.0.124/bcsaa/";
-    String BASE_URL = "http://123.49.41.11/";
+    String BASE_URL = "http://192.168.0.124/bcsaa/";
+    //String BASE_URL = "http://123.49.41.11/";
 
 
     @FormUrlEncoded
@@ -69,6 +72,61 @@ public interface Api {
     Call<ParticipantExamScheduleRespons> participant_exam_schedule(
             @Field("auth_data") String auth_data
     );
+
+
+    @FormUrlEncoded
+    @POST("api/participant-leave-view")
+    Call<ParticipantLeaveListResponse> participant_leave_view(
+            @Field("auth_data") String auth_data
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/admin-participant-leave-list")
+    Call<ParticipantLeaveListResponse> admin_participant_leave_list(
+            @Field("auth_data") String auth_data
+    );
+
+    @FormUrlEncoded
+    @POST("api/admin-participant-leave-approved")
+    Call<CommonData> admin_participant_leave_approved(
+            @Field("auth_data") String auth_data,
+            @Field("action") String action
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/admin-participant-leave-rejected")
+    Call<CommonData> admin_participant_leave_rejected(
+            @Field("auth_data") String auth_data,
+            @Field("action") String action
+    );
+
+    @FormUrlEncoded
+    @POST("api/participant-leave-store")
+    Call<CommonResponse> participant_leave_store(
+            @Field("auth_data") String auth_data,
+            @Field("purpose") String purpose,
+            @Field("start_date") String start_date,
+            @Field("end_date") String end_date,
+            @Field("start_time") String start_time,
+            @Field("end_time") String end_time
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/participant-leave-update")
+    Call<CommonResponse> participant_leave_update(
+            @Field("action") String action,
+            @Field("auth_data") String auth_data,
+            @Field("purpose") String purpose,
+            @Field("start_date") String start_date,
+            @Field("end_date") String end_date,
+            @Field("start_time") String start_time,
+            @Field("end_time") String end_time
+    );
+
+
 
 
     @FormUrlEncoded
@@ -133,5 +191,11 @@ public interface Api {
             @Field("week") String week
     );
 
-
+    @FormUrlEncoded
+    @POST("api/participant-weekly-attendance-store")
+    Call<LoginResponse> register(
+            @Field("name") String name,
+            @Field("mobile") String mobile,
+            @Field("email") String email,
+            @Field("password") String password);
 }

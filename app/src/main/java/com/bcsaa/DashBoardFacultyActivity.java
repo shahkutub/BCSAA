@@ -121,6 +121,13 @@ public class DashBoardFacultyActivity extends AppCompatActivity{
         startActivity(new Intent(context,SpeakerListActivity.class));
         }
 
+
+    public void onClickManageLeave(View v){
+        startActivity(new Intent(context,ManageLeaveListActivity.class));
+        }
+
+
+
         public void onClickLogOutFaculty(View v){
 
             PersistentUser.logOut(context);

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Officer Name"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                />
+
+
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Email"
+
+                android:layout_marginLeft="@dimen/_1sdp"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:id="@+id/tvContact"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Contact no"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:id="@+id/tvPost"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Post"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+            <TextView
+                android:id="@+id/tvDepartment"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Department"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+
+            <TextView
+                android:id="@+id/tvTimePeriod"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Time period"
+                android:background="@drawable/tv_bg"
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/_1sdp"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</HorizontalScrollView>
