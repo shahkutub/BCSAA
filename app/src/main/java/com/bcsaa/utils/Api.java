@@ -32,7 +32,7 @@ import retrofit2.http.Url;
 
 public interface Api {
 
-    String BASE_URL = "http://192.168.0.124/bcsaa/";
+    String BASE_URL = "http://nanosoftbd.com/bcsaa/";
     //String BASE_URL = "http://123.49.41.11/";
 
 
