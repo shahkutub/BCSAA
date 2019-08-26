@@ -283,15 +283,15 @@ public class LeaveApplicatonForm extends AppCompatActivity {
                 Log.e("from_date",""+from_date +" ,"+to_date);
                 finish();
 
-                if(commonResponse!=null){
-                    if(commonResponse.getData()!=null){
-                        Toast.makeText(context, commonResponse.getSuccessmsg(), Toast.LENGTH_SHORT).show();
-                        finish();
-                    }else {
-                        Toast.makeText(context, commonResponse.getErrormsg(), Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                }
+//                if(commonResponse!=null){
+//                    if(commonResponse.getData()!=null){
+//                        Toast.makeText(context, commonResponse.getSuccessmsg(), Toast.LENGTH_SHORT).show();
+//                        finish();
+//                    }else {
+//                        Toast.makeText(context, commonResponse.getErrormsg(), Toast.LENGTH_SHORT).show();
+//                        finish();
+//                    }
+//                }
 
 
             }

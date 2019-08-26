@@ -205,15 +205,16 @@ public class CasualLeaveApplicatonForm extends AppCompatActivity {
             public void onResponse(Call<CommonResponse> call, Response<CommonResponse> response) {
                 pd.dismiss();
                 CommonResponse   commonResponse =response.body();
+                Toast.makeText(context, "Leave application submitted.", Toast.LENGTH_SHORT).show();
+                finish();
 
-
-                if(commonResponse.getData()!=null){
-                    Toast.makeText(context, commonResponse.getSuccessmsg(), Toast.LENGTH_SHORT).show();
-                    finish();
-                }else {
-                    Toast.makeText(context, commonResponse.getErrormsg(), Toast.LENGTH_SHORT).show();
-                    finish();
-                }
+//                if(commonResponse.getData()!=null){
+//                    Toast.makeText(context, commonResponse.getSuccessmsg(), Toast.LENGTH_SHORT).show();
+//                    finish();
+//                }else {
+//                    Toast.makeText(context, commonResponse.getErrormsg(), Toast.LENGTH_SHORT).show();
+//                    finish();
+//                }
 
             }
 
