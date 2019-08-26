@@ -75,7 +75,7 @@ public class ParticipantAddWeek extends AppCompatActivity {
         linMealView = (LinearLayout) findViewById(R.id.linMealView);
         linWeak = (LinearLayout) findViewById(R.id.linWeak);
 
-        if(AppConstant.activitiName.equalsIgnoreCase("edit")){
+        if(AppConstant.activityName.equalsIgnoreCase("edit")){
             Log.e("weekId",""+AppConstant.weekId);
             linWeak.setVisibility(View.GONE);
             participant_weekly_attendance_edit(AppConstant.weekId);

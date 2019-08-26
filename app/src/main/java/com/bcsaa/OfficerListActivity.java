@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bcsaa.model.EmplyeeInfo;
+import com.bcsaa.utils.AppConstant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,8 @@ public class OfficerListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewOfficer;
     private ImageView imgBack;
-
+    private ImageView imgContent;
+    private TextView tvActivityName;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,32 @@ public class OfficerListActivity extends AppCompatActivity {
                 finish();
             }
         });
+        imgContent = (ImageView)findViewById(R.id.imgContent);
+        tvActivityName = (TextView)findViewById(R.id.tvActivityName);
+
+        tvActivityName.setText(AppConstant.activityName);
+
+        if(AppConstant.activityName.equalsIgnoreCase("Officers List")){
+            imgContent.setImageResource(R.drawable.officerslist);
+        }else if(AppConstant.activityName.equalsIgnoreCase("Staff List")){
+            imgContent.setImageResource(R.drawable.stafflist);
+        }else if(AppConstant.activityName.equalsIgnoreCase("New Joined")){
+            imgContent.setImageResource(R.drawable.newlyjoin);
+        }else if(AppConstant.activityName.equalsIgnoreCase("Office Notice")){
+            imgContent.setImageResource(R.drawable.officenotice);
+        }else if(AppConstant.activityName.equalsIgnoreCase("Attendance")){
+            imgContent.setImageResource(R.drawable.attendance);
+        }else if(AppConstant.activityName.equalsIgnoreCase("Leave")){
+            imgContent.setImageResource(R.drawable.leavereport);
+        }else if(AppConstant.activityName.equalsIgnoreCase("Promotion")){
+            imgContent.setImageResource(R.drawable.promotion);
+        }else if(AppConstant.activityName.equalsIgnoreCase("Transfer")){
+            imgContent.setImageResource(R.drawable.transfer);
+        }
+
+
+
+
 
         recyclerViewOfficer = (RecyclerView)findViewById(R.id.recyclerViewOfficer);
         List<EmplyeeInfo> list = new ArrayList<>();

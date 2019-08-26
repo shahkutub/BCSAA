@@ -15,9 +15,11 @@ public class AppConstant {
 
     public static String grouprandomRutine;
     public static String sessionId;
-    public static String activitiName;
     public static String weekId;
     public static LeaveInfo perticipantLeaveInfo = new LeaveInfo();
+    public static String activityName;
+    public static String leaveAction;
+    public static String baseUrl= "baseUrl";
 
     public static void saveLoginUserdat(Context con, Logged_session_data loginData) {
         SharedPreferences mPrefs = con.getSharedPreferences("Logged_session_data",MODE_PRIVATE);

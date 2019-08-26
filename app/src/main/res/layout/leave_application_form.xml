@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#16957C"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ic_left_black_24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leave Application Form"
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            />
+
+        <LinearLayout
+            android:id="@+id/linUploadClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/view_bg"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"
+            >
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_add_circle_black_24dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Add"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leave Type"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp"
+                        >
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/spnLeaveType"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/_3sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Attachment if any"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@drawable/spinner_bg"
+                        android:orientation="horizontal"
+                        android:gravity="center|left"
+                        >
+
+                        <Button
+                            android:id="@+id/btnChooseFile"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="wrap_content"
+                            android:text="choose"
+                            android:textSize="@dimen/_10sdp"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linEarnLeave"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Earned Leave"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_13sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvTotalEarnedLeave"
+                        android:layout_width="match_parent"
+                        android:inputType="textCapSentences"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        android:text=""
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Remaining earned Leave"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_13sdp"
+                        />
+                    <TextView
+                        android:id="@+id/tvRemainingLeave"
+                        android:layout_width="match_parent"
+                        android:inputType="textCapSentences"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_13sdp"
+                        android:text=""
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linMaternityLeave"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Days"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_13sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvTotalMaternityLeave"
+                        android:layout_width="match_parent"
+                        android:inputType="textCapSentences"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        android:text=""
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Remain Maternity Leave"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_13sdp"
+                        />
+                    <TextView
+                        android:id="@+id/tvRemainingMaternityLeave"
+                        android:layout_width="match_parent"
+                        android:inputType="textCapSentences"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_13sdp"
+                        android:text=""
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="From Date*"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvStartDate"
+                        android:layout_width="match_parent"
+                        android:inputType="textCapSentences"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        android:text="From Date"
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="To Date*"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+                    <TextView
+                        android:id="@+id/tvEndDate"
+                        android:layout_width="match_parent"
+                        android:inputType="textCapSentences"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        android:text="To Date"
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Number of Days"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvNumberOfDays"
+                        android:layout_width="match_parent"
+                        android:inputType="textCapSentences"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leave Substitute Post"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp"
+                        >
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/spnLeaveSubtitutePost"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leave Substitute Employee *"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:background="@drawable/spinner_bg"
+                        android:layout_height="@dimen/_40sdp"
+                        >
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/spnLeaveSubtituteEmployee"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contact Number "
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+
+                    <EditText
+                        android:id="@+id/etContact"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:inputType="phone"
+                        android:background="@drawable/spinner_bg"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Purpose*"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+
+                    <EditText
+                        android:id="@+id/etPurpose"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:inputType="textCapSentences"
+                        android:background="@drawable/spinner_bg"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address While Leave"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        />
+
+                    <EditText
+                        android:id="@+id/etAddress"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:inputType="textCapSentences"
+                        android:background="@drawable/spinner_bg"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_15sdp"
+                        android:layout_height="@dimen/_40sdp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btnSubmitApplication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_50sdp"
+                    android:layout_marginRight="@dimen/_50sdp"
+                    android:background="@drawable/view_bg"
+                    android:text="submit"
+                    android:textColor="#fff"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

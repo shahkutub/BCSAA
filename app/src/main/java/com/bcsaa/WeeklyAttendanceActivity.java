@@ -62,7 +62,7 @@ public class WeeklyAttendanceActivity extends AppCompatActivity {
         linAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppConstant.activitiName = "Add";
+                AppConstant.activityName = "Add";
                 startActivity(new Intent(context,ParticipantAddWeek.class));
             }
         });
@@ -93,7 +93,7 @@ public class WeeklyAttendanceActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    AppConstant.activitiName = "edit";
+                    AppConstant.activityName = "edit";
                     AppConstant.weekId = myListData.getWeek();
                     startActivity(new Intent(context,ParticipantAddWeek.class));
                 }

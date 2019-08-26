@@ -1,10 +1,16 @@
 package com.bcsaa.utils;
 
+import com.bcsaa.model.AdminLeaveApplicationCLresponse;
+import com.bcsaa.model.AdminLeaveApprovalInfoResponse;
+import com.bcsaa.model.AdminleaveapplicationelResponse;
 import com.bcsaa.model.AttendanceStoreResponse;
 import com.bcsaa.model.ClassRoutineDeatilseResponse;
 import com.bcsaa.model.ClassRoutineResponse;
 import com.bcsaa.model.CommonData;
 import com.bcsaa.model.CommonResponse;
+import com.bcsaa.model.EmployeeLeaveListResponse;
+import com.bcsaa.model.LeaveSubstituteEmployeeResponse;
+import com.bcsaa.model.Leave_substitute_post;
 import com.bcsaa.model.LoginResponse;
 import com.bcsaa.model.PartiSpeakerEvaluAddResponse;
 import com.bcsaa.model.PartiSpeakerEvaluResponse;
@@ -20,7 +26,9 @@ import java.io.File;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Url;
 
 public interface Api {
 
@@ -165,6 +173,44 @@ public interface Api {
 
 
     @FormUrlEncoded
+    @POST("api/admin-leave-application-cl")
+    Call<AdminLeaveApplicationCLresponse> admin_leave_application_cl(
+            @Field("auth_data") String auth_data
+    );
+
+
+
+    @FormUrlEncoded
+    @POST("api/admin-leave-application-el")
+    Call<AdminleaveapplicationelResponse> admin_leave_application_el(
+            @Field("auth_data") String auth_data
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/admin-personal-leave-application-list")
+    Call<EmployeeLeaveListResponse> employeeLeaveList(
+            @Field("auth_data") String auth_data
+    );
+
+    @FormUrlEncoded
+    @POST("api/admin-others-leave-application-list")
+    Call<EmployeeLeaveListResponse> manageEmployeeLeaveList(
+            @Field("auth_data") String auth_data
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/admin-leave-approval-info")
+    Call<AdminLeaveApprovalInfoResponse> admin_leave_approval_info(
+            @Field("auth_data") String auth_data,
+            @Field("action_id") String action_id
+    );
+
+
+
+
+    @FormUrlEncoded
     @POST("api/participant-weekly-attendance-plan-get-month-meal")
     Call<ParticipantMealAttendanceRespons> participantweeklyattendanceplangetmonthmeal(
             @Field("auth_data") String auth_data,
@@ -180,7 +226,6 @@ public interface Api {
     );
 
 
-
     @FormUrlEncoded
     @POST("api/participant-weekly-attendance-store")
     Call<AttendanceStoreResponse> participantweeklyattendancestore(
@@ -191,6 +236,74 @@ public interface Api {
             @Field("week") String week
     );
 
+
+    @FormUrlEncoded
+    @POST("api/admin-leave-approval-store")
+    Call<CommonResponse> adminLeaveApprovalStore(
+            @Field("auth_data") String auth_data,
+            @Field("leave_application_id") String leave_application_id,
+            @Field("reject_reason") String reject_reason,
+            @Field("approval_status") String approval_status,
+            @Field("higher_authority_id") String higher_authority_id
+    );
+
+
+
+
+    //    "required_data": [
+//        "leave_type_id",
+//        "leave_remaining",
+//        "leave_attachment",
+//        "from_date",
+//        "to_date",
+//        "number_of_days",
+//        "leave_substitute_post",
+//        "leave_substitute_id",
+//        "emergency_contact",
+//        "purpose",
+//        "leave_address"
+//    ]
+
+    @FormUrlEncoded
+    @POST("api/admin-store-leave-application-cl")
+    Call<CommonResponse> admin_store_leave_application(
+
+            @Field("auth_data") String auth_data,
+            @Field("leave_type_id") String leave_type_id,
+            @Field("leave_remaining") String leave_remaining,
+            @Field("from_date") String from_date,
+            @Field("to_date") String to_date,
+            @Field("number_of_days") String number_of_days,
+            @Field("leave_substitute_post") String leave_substitute_post,
+            @Field("leave_substitute_id") String leave_substitute_id,
+            @Field("emergency_contact") String emergency_contact,
+            @Field("purpose") String purpose,
+            @Field("leave_address") String leave_address
+    );
+
+
+
+    @FormUrlEncoded
+    @POST("api/admin-store-leave-application-el")
+    Call<CommonResponse> admin_store_leave_applicationEl(
+            @Field("auth_data") String auth_data,
+            @Field("leave_type_id") String leave_type_id,
+            @Field("total_earned") String total_earned,
+            @Field("leave_remaining") String leave_remaining,
+            @Field("total_days") String total_days,
+            @Field("maternity_remain") String maternity_remain,
+            @Field("from_date") String from_date,
+            @Field("to_date") String to_date,
+            @Field("number_of_days") String number_of_days,
+            @Field("leave_substitute_post") String leave_substitute_post,
+            @Field("leave_substitute_id") String leave_substitute_id,
+            @Field("emergency_contact") String emergency_contact,
+            @Field("purpose") String purpose,
+            @Field("leave_address") String leave_address
+    );
+
+
+
     @FormUrlEncoded
     @POST("api/participant-weekly-attendance-store")
     Call<LoginResponse> register(
@@ -198,4 +311,9 @@ public interface Api {
             @Field("mobile") String mobile,
             @Field("email") String email,
             @Field("password") String password);
+
+    @GET
+    public Call<LeaveSubstituteEmployeeResponse> getEmployee(
+            @Url String url
+    );
 }

@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bcsaa.model.LoginResponse;
@@ -47,13 +48,15 @@ public class LoginActivity extends AppCompatActivity {
     //ddpdbcsadminacademy.gov.bd
     //as
 
+    LinearLayout logo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_form);
 
         context = this;
-
+        PersistData.setStringData(context,AppConstant.baseUrl,Api.BASE_URL);
         if(PersistentUser.isLogged(context)){
             if(AppConstant.getLoginUserdat(context).getUsertype()!=null){
                 if(AppConstant.getLoginUserdat(context).getUsertype().equalsIgnoreCase("participant")){
@@ -76,6 +79,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initUi() {
+
+        logo = (LinearLayout)findViewById(R.id.logo);
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLoginDialog();
+            }
+        });
 
         etEmail = (EditText)findViewById(R.id.etEmail);
         etPass = (EditText)findViewById(R.id.etPass);
@@ -134,7 +146,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Api.BASE_URL)
+                .baseUrl(PersistData.getStringData(context,AppConstant.baseUrl))
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -189,6 +201,45 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void showLoginDialog()
+    {
+        LayoutInflater li = LayoutInflater.from(this);
+        View prompt = li.inflate(R.layout.login_dialog, null);
+        final android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(this);
+        alertDialogBuilder.setView(prompt);
+        final EditText code = (EditText) prompt.findViewById(R.id.login_name);
+
+        code.setText(PersistData.getStringData(context,AppConstant.baseUrl));
+
+
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id)
+                    {
+                        String url = code.getText().toString();
+                        if(TextUtils.isEmpty(url)){
+                            Toast.makeText(context, "input url", Toast.LENGTH_SHORT).show();
+                        }else {
+                            PersistData.setStringData(context,AppConstant.baseUrl,url);
+                        }
+
+                    }
+                });
+
+        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id)
+            {
+                dialog.cancel();
+
+            }
+        });
+
+        alertDialogBuilder.show();
 
     }
 

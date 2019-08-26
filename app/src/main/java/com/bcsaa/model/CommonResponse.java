@@ -3,10 +3,18 @@ package com.bcsaa.model;
 public class CommonResponse {
 
 
-    String errormsg,successmsg;
+    String errormsg,successmsg,data ;
 
+    public String getData() {
+        return data;
+    }
 
-    CommonData data = new CommonData();
+    public void setData(String data) {
+        this.data = data;
+    }
+
+//Common data = new Common();
+
 
     public String getErrormsg() {
         return errormsg;
@@ -24,11 +32,8 @@ public class CommonResponse {
         this.successmsg = successmsg;
     }
 
-    public CommonData getData() {
-        return data;
-    }
 
-    public void setData(CommonData data) {
-        this.data = data;
+    private class Common {
+
     }
 }

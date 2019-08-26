@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A7B2B9"
+    android:id="@+id/linMyApplication"
+    android:visibility="gone"
+    >
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_cl_leave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="#000"
+        android:padding="@dimen/_10sdp"
+        android:gravity="left|center"
+        android:onClick="onClickApplyLeaveCL"
+        android:textSize="@dimen/_11sdp"
+        android:text="Apply for Leave(CL)"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_apply_leave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="#000"
+        android:padding="@dimen/_10sdp"
+        android:gravity="left|center"
+        android:onClick="onClickApplyLeave"
+        android:textSize="@dimen/_11sdp"
+        android:text="Apply for Leave"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_apply_leave_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="#000"
+        android:padding="@dimen/_10sdp"
+        android:gravity="left|center"
+        android:onClick="onClickApplyLeaveList"
+        android:textSize="@dimen/_11sdp"
+        android:text="Leave Application List"/>
+
+
+</LinearLayout>

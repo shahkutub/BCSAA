@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EmployeeLeaveListActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="#16957C"
@@ -18,14 +23,39 @@
             />
 
         <TextView
-            android:id="@+id/tvActivityName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Manage Leave Application List"
             android:layout_centerInParent="true"
             android:textColor="#fff"
             android:textSize="@dimen/_15sdp"
             />
+
+        <LinearLayout
+            android:id="@+id/linUploadClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/view_bg"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"
+            >
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_add_circle_black_24dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Add"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+
     </RelativeLayout>
 
     <HorizontalScrollView
@@ -37,36 +67,20 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/imgContent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        />
-                </LinearLayout>
-
-
-            </ScrollView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:background="#5A6268"
                     android:gravity="center"
-                    android:text="Officer Name"
+                    android:text="Employee Name"
                     android:textColor="#fff" />
 
 
@@ -76,7 +90,7 @@
                     android:layout_marginLeft="@dimen/_1sdp"
                     android:background="#5A6268"
                     android:gravity="center"
-                    android:text="Email"
+                    android:text="Leave Type"
                     android:textColor="#fff" />
 
                 <TextView
@@ -85,7 +99,7 @@
                     android:layout_marginLeft="@dimen/_1sdp"
                     android:background="#5A6268"
                     android:gravity="center"
-                    android:text="Contact no"
+                    android:text="Form Date"
                     android:textColor="#fff" />
 
                 <TextView
@@ -94,7 +108,7 @@
                     android:layout_marginLeft="@dimen/_1sdp"
                     android:background="#5A6268"
                     android:gravity="center"
-                    android:text="Post"
+                    android:text="To Date"
                     android:textColor="#fff" />
 
                 <TextView
@@ -103,7 +117,7 @@
                     android:layout_marginLeft="@dimen/_1sdp"
                     android:background="#5A6268"
                     android:gravity="center"
-                    android:text="Department"
+                    android:text="Number Of Days"
                     android:textColor="#fff" />
 
 
@@ -113,23 +127,39 @@
                     android:layout_marginLeft="@dimen/_1sdp"
                     android:background="#5A6268"
                     android:gravity="center"
-                    android:text="Time period"
+                    android:text="Remaining Leave"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:background="#5A6268"
+                    android:gravity="center"
+                    android:text="Status"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:background="#5A6268"
+                    android:gravity="center"
+                    android:text="Action"
                     android:textColor="#fff" />
 
 
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerViewOfficer"
+                android:id="@+id/recyclerViewLeaveList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone">
+                >
 
             </android.support.v7.widget.RecyclerView>
         </LinearLayout>
 
     </HorizontalScrollView>
-
-
 
 </LinearLayout>

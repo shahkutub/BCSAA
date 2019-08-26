@@ -119,6 +119,7 @@
                     android:textColor="#000"
                     android:padding="@dimen/_10sdp"
                     android:textSize="@dimen/_11sdp"
+                    android:visibility="gone"
                     android:gravity="left|center"
                     android:text="  Class Routine"/>
 
@@ -131,6 +132,7 @@
                     android:onClick="onClickCourseContent"
                     android:textSize="@dimen/_11sdp"
                     android:gravity="left"
+                    android:visibility="gone"
                     android:text="Class Content by CMT"/>
 
                 <android.support.v7.widget.AppCompatButton
@@ -141,6 +143,7 @@
                     android:padding="@dimen/_10sdp"
                     android:onClick="onClickWeeklyAttendance"
                     android:textSize="@dimen/_11sdp"
+                    android:visibility="gone"
                     android:gravity="left"
                     android:text="Weekly Attendance Plan"/>
 
@@ -152,6 +155,7 @@
                     android:padding="@dimen/_10sdp"
                     android:onClick="onClickRoutine"
                     android:gravity="left"
+                    android:visibility="gone"
                     android:textSize="@dimen/_11sdp"
                     android:text="Exam Routine"/>
 
@@ -166,6 +170,7 @@
                     android:onClick="onClickSpeakerEvaluation"
                     android:gravity="left|center"
                     android:textSize="@dimen/_11sdp"
+                    android:visibility="gone"
                     android:text="Speaker Evaluation"/>
 
 
@@ -179,11 +184,70 @@
                     android:padding="@dimen/_10sdp"
                     android:onClick="onClickLeaveApplication"
                     android:gravity="left|center"
+                    android:visibility="gone"
                     android:textSize="@dimen/_11sdp"
                     android:text="Leave Application"/>
 
 
 
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_my_application"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColor="#fff"
+                    android:padding="@dimen/_10sdp"
+                    android:onClick="onClickApplication"
+                    android:gravity="left|center"
+                    android:background="#0283D6"
+                    android:textSize="@dimen/_11sdp"
+                    android:text="My Application"/>
+
+
+
+                <include
+                    layout="@layout/my_application_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_manage_application"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColor="#fff"
+                    android:padding="@dimen/_10sdp"
+                    android:onClick="onClickManageApplication"
+                    android:gravity="left|center"
+                    android:background="#0283D6"
+                    android:textSize="@dimen/_11sdp"
+                    android:text="Manage Application"/>
+
+
+               <LinearLayout
+                   android:id="@+id/linManageLeave"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:background="#A7B2B9"
+                   android:visibility="gone"
+                   >
+                   <android.support.v7.widget.AppCompatButton
+                       android:id="@+id/btn_manage_leave_list"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       android:layout_marginBottom="@dimen/_5sdp"
+                       android:textColor="#000"
+                       android:padding="@dimen/_10sdp"
+                       android:gravity="left|center"
+                       android:onClick="onClickManageLeaveList"
+                       android:textSize="@dimen/_11sdp"
+                       android:text="Leave Application List"/>
+
+
+               </LinearLayout>
 
 
             </LinearLayout>
