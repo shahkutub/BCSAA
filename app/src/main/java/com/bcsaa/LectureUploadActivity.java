@@ -31,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bcsaa.model.RoutineData;
+import com.bcsaa.utils.FileUtils;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import java.io.File;
@@ -49,6 +50,7 @@ public class LectureUploadActivity extends AppCompatActivity {
     private Button btnSearch,btnSubmit,btnChooseFile;
     private final static int IMAGE_RESULT = 200;
     private String userPhotoPath;
+    private TextView tvFileName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +61,7 @@ public class LectureUploadActivity extends AppCompatActivity {
     }
 
     private void initUi() {
+        tvFileName = (TextView)findViewById(R.id.tvFileName);
 
         imgBack = (ImageView)findViewById(R.id.imgBack);
         imgBack.setOnClickListener(new View.OnClickListener() {
@@ -258,7 +261,7 @@ public class LectureUploadActivity extends AppCompatActivity {
         }
 
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        galleryIntent.setType("image/*");
+        galleryIntent.setType("*/*");
         List<ResolveInfo> listGallery = packageManager.queryIntentActivities(galleryIntent, 0);
         for (ResolveInfo res : listGallery) {
             Intent intent = new Intent(galleryIntent);
@@ -291,9 +294,13 @@ public class LectureUploadActivity extends AppCompatActivity {
 
             if (requestCode == IMAGE_RESULT) {
 
-                String filePath = getImageFilePath(data);
-                if (filePath != null) {
+                File file = new File(getImageFilePath(data));
+                userPhotoPath = FileUtils.getPath(context,data.getData());
+
+                if (file != null) {
                         userPhotoPath = getImageFilePath(data);
+                    String filename=userPhotoPath.substring(userPhotoPath.lastIndexOf("/")+1);
+                    tvFileName.setText(filename);
                         Log.e("userPicPath",""+userPhotoPath);
                 }
             }
@@ -377,7 +384,7 @@ public class LectureUploadActivity extends AppCompatActivity {
         }
     }
 
-    public class CustomAdapter extends ArrayAdapter<RowItem> {
+    public static class CustomAdapter extends ArrayAdapter<RowItem> {
 
         LayoutInflater flater;
 
@@ -415,7 +422,7 @@ public class LectureUploadActivity extends AppCompatActivity {
         }
     }
 
-    public class RowItem {
+    public static class RowItem {
 
         private String Title;
 

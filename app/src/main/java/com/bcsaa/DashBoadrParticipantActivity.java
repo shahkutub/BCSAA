@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.bcsaa.model.CmtInfo;
 import com.bcsaa.model.DailyDchedule;
+import com.bcsaa.model.Logged_session_data;
 import com.bcsaa.model.ParticipantDashboardRespons;
 import com.bcsaa.utils.AlertMessage;
 import com.bcsaa.utils.Api;
@@ -45,6 +46,7 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
     private DrawerLayout drawer;
     private TextView tvNameCourse,tvNameBach,tvMaleDress,tvFemaleDress;
     ParticipantDashboardRespons prticipantDashboardRespons;
+    Logged_session_data logged_session_data ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +58,14 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
     }
 
     private void initUi() {
+        logged_session_data = AppConstant.getLoginUserdat(context);
 
         TextView tvUserName = (TextView)findViewById(R.id.tvUserName);
-        tvUserName.setText(AppConstant.getLoginUserdat(context).getName());
+
+        if(AppConstant.getLoginUserdat(context)!=null){
+            tvUserName.setText(""+logged_session_data.getName());
+        }
+
 
         TextView tvDate = (TextView)findViewById(R.id.tvDate);
         tvNameCourse = (TextView)findViewById(R.id.tvNameCourse);

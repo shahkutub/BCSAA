@@ -44,7 +44,6 @@ public class DashBoardFacultyActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_faculty);
         context = this;
-
         initDrawer();
         initUi();
     }
@@ -96,6 +95,13 @@ public class DashBoardFacultyActivity extends AppCompatActivity{
 
         //calling sync state is necessary or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
+    }
+
+    public void onClickDailySchedule(View v){
+
+        startActivity(new Intent(context,DailyScheduleActivity.class));
+
+
     }
 
     public void onClickLectureUpload(View v){

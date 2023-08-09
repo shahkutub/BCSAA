@@ -32,7 +32,8 @@ import retrofit2.http.Url;
 
 public interface Api {
 
-    String BASE_URL = "http://nanosoftbd.com/bcsaa/";
+    String BASE_URL = "https://erp.bcsadminacademy.gov.bd/";
+    //String BASE_URL = "http://nanosoftbd.com/bcsaa/";
     //String BASE_URL = "http://123.49.41.11/";
 
 

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ import com.bcsaa.utils.AppConstant;
 import com.bcsaa.utils.NetInfo;
 import com.bcsaa.utils.PersistData;
 import com.bcsaa.utils.PersistentUser;
+import com.google.gson.Gson;
 
 import java.util.concurrent.TimeUnit;
 
@@ -60,12 +62,12 @@ public class LoginActivity extends AppCompatActivity {
         if(PersistentUser.isLogged(context)){
             if(AppConstant.getLoginUserdat(context).getUsertype()!=null){
                 if(AppConstant.getLoginUserdat(context).getUsertype().equalsIgnoreCase("participant")){
-                    //startActivity(new Intent(context,DashBoadrParticipantActivity.class));
-                    startActivity(new Intent(context,DashboardHRActivity.class));
+                    startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                    //startActivity(new Intent(context,DashboardHRActivity.class));
                     finish();
                 }else {
-                    //startActivity(new Intent(context,DashBoardFacultyActivity.class));
-                    startActivity(new Intent(context,DashboardHRActivity.class));
+                    startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                    //startActivity(new Intent(context,DashboardHRActivity.class));
                     finish();
                 }
             }
@@ -96,10 +98,12 @@ public class LoginActivity extends AppCompatActivity {
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //showAuthDialog();
                 email = etEmail.getText().toString();
                 pass = etPass.getText().toString();
                 //startActivity(new Intent(context,DashBoardFacultyActivity.class));
+               // startActivity(new Intent(context,DashBoadrParticipantActivity.class));
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(context, "Input email address.", Toast.LENGTH_SHORT).show();
                     etEmail.requestFocus();
@@ -159,22 +163,23 @@ public class LoginActivity extends AppCompatActivity {
                 pd.dismiss();
 
                 loginrepons =response.body();
+                Log.e("loginResponse: ", new Gson().toJson(loginrepons));
                 if(loginrepons!=null){
                     if(loginrepons.getLogged_session_data()!=null){
                         Toast.makeText(context, ""+loginrepons.getSuccessmsg(), Toast.LENGTH_SHORT).show();
 
-                        if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
+                        if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("2")){
                             PersistentUser.setLogin(context);
                             AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                            //startActivity(new Intent(context,DashBoadrParticipantActivity.class));
-                            startActivity(new Intent(context,DashboardHRActivity.class));
+                            startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                            //startActivity(new Intent(context,DashboardHRActivity.class));
                             finish();
 
-                        }else {
+                        }else if (loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("1")){
                             PersistentUser.setLogin(context);
                             AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                            //startActivity(new Intent(context,DashBoardFacultyActivity.class));
-                            startActivity(new Intent(context,DashboardHRActivity.class));
+                            startActivity(new Intent(context,DashBoardFacultyActivity.class));
+                            //startActivity(new Intent(context,DashboardHRActivity.class));
                             finish();
                         }
 

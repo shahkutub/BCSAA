@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#2CA089"
     android:orientation="horizontal"
     android:padding="@dimen/_2sdp"
     >
@@ -36,9 +35,9 @@
         android:id="@+id/relNotifiView"
         android:layout_width="@dimen/_50sdp"
         android:gravity="center"
+        android:visibility="gone"
         android:layout_alignParentRight="true"
         android:layout_height="@dimen/_40sdp">
-
 
         <ImageView
             android:layout_width="@dimen/_35sdp"
@@ -46,18 +45,18 @@
             android:layout_centerInParent="true"
             android:src="@drawable/ic_notifications"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30"
-            android:textColor="#fff"
-            android:textSize="@dimen/_10sdp"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_4sdp"
             android:layout_marginRight="@dimen/_8sdp"
             android:background="@drawable/stockcountbg"
-            />
+            android:text="30"
+            android:textColor="#fff"
+            android:textSize="@dimen/_10sdp" />
     </RelativeLayout>
 
 

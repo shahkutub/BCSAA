@@ -36,6 +36,9 @@
         </provider>
 
         <activity
+            android:name=".DailyScheduleActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".DashBoadrParticipantActivity"
             android:screenOrientation="portrait" />
         <activity
