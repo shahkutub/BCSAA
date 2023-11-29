@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/E:/AndroidSoftware/sdk/sdk/icons/material/materialicons/access_time/baseline_access_time_24.xml" />
+                                      <entry key="url" value="jar:file:/D:/android/plugins/android/lib/android.jar!/images/material/icons/materialicons/arrow_forward_ios/baseline_arrow_forward_ios_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_access_time_24" />
+                            <entry key="color" value="494747" />
+                            <entry key="outputName" value="baseline_arrow_forward_ios_24" />
                             <entry key="sourceFile" value="F:\ALL LATEST PROJECT\BCSAA" />
                           </map>
                         </option>
