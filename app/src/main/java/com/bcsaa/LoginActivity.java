@@ -66,8 +66,8 @@ public class LoginActivity extends AppCompatActivity {
                     //startActivity(new Intent(context,DashboardHRActivity.class));
                     finish();
                 }else {
-                    startActivity(new Intent(context,DashBoardFacultyActivity.class));
-                    //startActivity(new Intent(context,DashboardHRActivity.class));
+                    startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                    //startActivity(new Intent(context,DashBoardFacultyActivity.class));
                     finish();
                 }
             }
@@ -168,7 +168,7 @@ public class LoginActivity extends AppCompatActivity {
                     if(loginrepons.getLogged_session_data()!=null){
                         Toast.makeText(context, ""+loginrepons.getSuccessmsg(), Toast.LENGTH_SHORT).show();
 
-                        if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("2")){
+                        if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
                             PersistentUser.setLogin(context);
                             AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
                             startActivity(new Intent(context,DashBoadrParticipantActivity.class));
@@ -182,11 +182,9 @@ public class LoginActivity extends AppCompatActivity {
                             //startActivity(new Intent(context,DashboardHRActivity.class));
                             finish();
                         }
-
                     }else {
                         Toast.makeText(context, ""+loginrepons.getErrormsg(), Toast.LENGTH_SHORT).show();
                     }
-
 
                     if(loginrepons.getAuthentication_access().equalsIgnoreCase("yes")){
                         if(loginrepons.getAuthentication_info()!=null){

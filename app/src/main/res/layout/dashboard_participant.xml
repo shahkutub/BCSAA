@@ -48,38 +48,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text=""
+                        android:text="name"
                         android:textSize="@dimen/_12sdp"
                         android:textStyle="bold"
                         android:textColor="#fff"
                         />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:gravity="center"
-                        android:visibility="gone"
-                        android:padding="@dimen/_5sdp"
-                        android:layout_marginTop="@dimen/_2sdp"
-
-                        >
-
-                        <ImageView
-                            android:layout_width="@dimen/_20sdp"
-                            android:layout_height="@dimen/_20sdp"
-                            android:src="@mipmap/ic_launcher"
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="@dimen/_12sdp"
-                            android:text="Change Password"
-                            android:textColor="#fff"/>
-
-                    </LinearLayout>
+                        android:textSize="@dimen/_12sdp"
+                        android:text="info"
+                        android:textColor="#fff"/>
 
                     <LinearLayout
                         android:onClick="onClickLogOutKortipokko"
@@ -87,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:padding="@dimen/_5sdp"
+                        android:padding="@dimen/_10sdp"
                         >
 
                         <ImageView
@@ -118,6 +98,7 @@
                     android:textColor="#000"
                     android:padding="@dimen/_10sdp"
                     android:textSize="@dimen/_11sdp"
+                    android:background="#fff"
                     android:gravity="left|center"
                     android:text="  Class Routine"/>
 
@@ -129,6 +110,7 @@
                     android:padding="@dimen/_10sdp"
                     android:onClick="onClickCourseContent"
                     android:textSize="@dimen/_11sdp"
+                    android:background="#fff"
                     android:gravity="left"
                     android:text="Class Content by CMT"/>
 
@@ -140,6 +122,7 @@
                     android:padding="@dimen/_10sdp"
                     android:onClick="onClickWeeklyAttendance"
                     android:textSize="@dimen/_11sdp"
+                    android:background="#fff"
                     android:gravity="left"
                     android:text="Weekly Attendance Plan"/>
 
@@ -151,6 +134,7 @@
                     android:padding="@dimen/_10sdp"
                     android:onClick="onClickRoutine"
                     android:gravity="left"
+                    android:background="#fff"
                     android:textSize="@dimen/_11sdp"
                     android:text="Exam Routine"/>
 
@@ -165,6 +149,7 @@
                     android:onClick="onClickSpeakerEvaluation"
                     android:gravity="left|center"
                     android:textSize="@dimen/_11sdp"
+                    android:background="#fff"
                     android:text="Speaker Evaluation"/>
 
 
@@ -179,6 +164,7 @@
                     android:onClick="onClickLeaveApplication"
                     android:gravity="left|center"
                     android:textSize="@dimen/_11sdp"
+                    android:background="#fff"
                     android:text="Leave Application"/>
 
 

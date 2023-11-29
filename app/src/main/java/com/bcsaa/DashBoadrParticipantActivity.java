@@ -44,7 +44,8 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawer;
-    private TextView tvNameCourse,tvNameBach,tvMaleDress,tvFemaleDress;
+    private TextView tvNameCourse,tvNameBach;
+            //tvMaleDress,tvFemaleDress;
     ParticipantDashboardRespons prticipantDashboardRespons;
     Logged_session_data logged_session_data ;
     @Override
@@ -70,8 +71,8 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
         TextView tvDate = (TextView)findViewById(R.id.tvDate);
         tvNameCourse = (TextView)findViewById(R.id.tvNameCourse);
         tvNameBach = (TextView)findViewById(R.id.tvNameBach);
-        tvMaleDress = (TextView)findViewById(R.id.tvMaleDress);
-        tvFemaleDress = (TextView)findViewById(R.id.tvFemaleDress);
+//        tvMaleDress = (TextView)findViewById(R.id.tvMaleDress);
+//        tvFemaleDress = (TextView)findViewById(R.id.tvFemaleDress);
 
         Date c = Calendar.getInstance().getTime();
         System.out.println("Current time => " + c);
@@ -151,6 +152,7 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
 
     public void onClickLogOutKortipokko(View v){
         PersistentUser.logOut(context);
+        startActivity(new Intent(context,LoginActivity.class));
         finish();
     }
 
@@ -183,8 +185,8 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
                     if(prticipantDashboardRespons.getData()!= null){
                         tvNameCourse.setText(prticipantDashboardRespons.getData().getCourse());
                         tvNameBach.setText(prticipantDashboardRespons.getData().getBatch());
-                        tvMaleDress.setText(prticipantDashboardRespons.getData().getMale_dress());
-                        tvFemaleDress.setText(prticipantDashboardRespons.getData().getFemale_dress());
+//                        tvMaleDress.setText(prticipantDashboardRespons.getData().getMale_dress());
+//                        tvFemaleDress.setText(prticipantDashboardRespons.getData().getFemale_dress());
 
                         if(prticipantDashboardRespons.getData().getCmt()!=null){
                             RecyclerView recyclerViewCmt = (RecyclerView) findViewById(R.id.recyclerViewCmt);
@@ -194,13 +196,13 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
                             recyclerViewCmt.setAdapter(adapter);
                         }
 
-                        if(prticipantDashboardRespons.getData().getDaily_schedule()!=null){
-                            RecyclerView recyclerViewSchedule = (RecyclerView) findViewById(R.id.recyclerViewSchedule);
-                            RoutineListAdapter adapterSchedule = new RoutineListAdapter(prticipantDashboardRespons.getData().getDaily_schedule());
-                            recyclerViewSchedule.setHasFixedSize(true);
-                            recyclerViewSchedule.setLayoutManager(new LinearLayoutManager(context));
-                            recyclerViewSchedule.setAdapter(adapterSchedule);
-                        }
+//                        if(prticipantDashboardRespons.getData().getDaily_schedule()!=null){
+//                            RecyclerView recyclerViewSchedule = (RecyclerView) findViewById(R.id.recyclerViewSchedule);
+//                            RoutineListAdapter adapterSchedule = new RoutineListAdapter(prticipantDashboardRespons.getData().getDaily_schedule());
+//                            recyclerViewSchedule.setHasFixedSize(true);
+//                            recyclerViewSchedule.setLayoutManager(new LinearLayoutManager(context));
+//                            recyclerViewSchedule.setAdapter(adapterSchedule);
+//                        }
 
                     }
                 }
