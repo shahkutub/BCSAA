@@ -130,7 +130,6 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
 
     }
 
-
     public void onClickWeeklyAttendance(View v){
         startActivity(new Intent(context,WeeklyAttendanceActivity.class));
     }
@@ -142,7 +141,6 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
      public void onClickSpeakerEvaluation(View v){
             startActivity(new Intent(context,SpekerEvalutionActivity.class));
         }
-
 
      public void onClickLeaveApplication(View v){
             startActivity(new Intent(context,ParticipantLeaveApplicationActivity.class));

@@ -30,6 +30,8 @@ import com.bcsaa.utils.NetInfo;
 import com.bcsaa.utils.PersistentUser;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -95,6 +97,7 @@ public class ClassRoutineActivity extends AppCompatActivity {
                 classRoutineResponse =response.body();
 
                 if(classRoutineResponse!=null){
+                    Collections.reverse(classRoutineResponse.getData());
                     if(classRoutineResponse.getData()!= null){
                         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
                         MyListAdapter adapter = new MyListAdapter(classRoutineResponse.getData());

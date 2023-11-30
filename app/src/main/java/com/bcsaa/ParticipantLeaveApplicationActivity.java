@@ -31,8 +31,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-class ParticipantLeaveApplicationActivity extends AppCompatActivity{
-
+public class ParticipantLeaveApplicationActivity extends AppCompatActivity{
 
     Context context;
     private LinearLayout linAddLeave;

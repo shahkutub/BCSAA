@@ -39,7 +39,7 @@
             android:background="@drawable/view_bg"
             android:textSize="@dimen/_15sdp"
             android:gravity="center"
-            android:padding="@dimen/_5sdp"
+            android:padding="@dimen/_9sdp"
             android:textColor="#fff"
             />
 
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:padding="@dimen/_5sdp"
+            android:padding="@dimen/_9sdp"
             android:background="@drawable/view_bg_red"
             android:textColor="#fff"
             android:layout_marginLeft="@dimen/_5sdp"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="@dimen/_15sdp"
-                android:background="@drawable/tv_bg"
+                android:background="@drawable/curve_bg"
                 android:padding="@dimen/_10sdp"
                 >
 
@@ -158,6 +158,7 @@
                         app:cardCornerRadius="@dimen/_20sdp"
                         >
                         <LinearLayout
+                            android:onClick="onClickClassRoutine"
                             android:gravity="center"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
@@ -171,7 +172,7 @@
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Exam Routine"
+                                android:text="Class Routine"
                                 android:textColor="#fff"
                                 android:textStyle="normal"
                                 android:textSize="@dimen/_11sdp"
@@ -181,6 +182,7 @@
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
+                        android:onClick="onClickCourseContent"
                         android:layout_marginLeft="@dimen/_10sdp"
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_90sdp"
@@ -201,7 +203,7 @@
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Exam Result"
+                                android:text="Course Content"
                                 android:textColor="#fff"
                                 android:textStyle="normal"
                                 android:textSize="@dimen/_11sdp"
@@ -209,8 +211,8 @@
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
                     <android.support.v7.widget.CardView
+                        android:onClick="onClickWeeklyAttendance"
                         android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_weight="1"
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_90sdp"
                         app:cardBackgroundColor="#517FA4"
@@ -223,14 +225,15 @@
                             android:layout_height="match_parent">
                             <ImageView
                                 android:src="@drawable/appicon"
-                                android:layout_width="@dimen/_40sdp"
-                                android:layout_height="@dimen/_40sdp"/>
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"/>
                             <TextView
-                                android:padding="@dimen/_5sdp"
+                                android:padding="@dimen/_3sdp"
                                 android:layout_gravity="center"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
+                                android:gravity="center"
                                 android:layout_height="wrap_content"
-                                android:text="Assignment"
+                                android:text="Weekly Attendance Plan"
                                 android:textColor="#fff"
                                 android:textStyle="normal"
                                 android:textSize="@dimen/_11sdp"
@@ -246,6 +249,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content">
                     <android.support.v7.widget.CardView
+                        android:onClick="onClickRoutine"
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_90sdp"
                         app:cardBackgroundColor="#517FA4"
@@ -260,22 +264,24 @@
                                 android:src="@drawable/appicon"
                                 android:layout_width="@dimen/_35sdp"
                                 android:layout_height="@dimen/_35sdp"/>
+
                             <TextView
-                                android:padding="@dimen/_5sdp"
-                                android:layout_gravity="center"
                                 android:layout_width="match_parent"
-                                android:gravity="center"
                                 android:layout_height="wrap_content"
-                                android:text="Upcoming Session"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Exam Routine"
                                 android:textColor="#fff"
-                                android:textStyle="normal"
-                                android:textSize="@dimen/_11sdp"
-                                />
+                                android:textSize="@dimen/_10sdp"
+                                android:textStyle="normal" />
                         </LinearLayout>
 
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
+                        android:onClick="onClickSpeakerEvaluation"
+                        android:id="@+id/onClickSpeakerEvaluation"
                         android:layout_marginLeft="@dimen/_10sdp"
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_90sdp"
@@ -305,6 +311,7 @@
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
                     <android.support.v7.widget.CardView
+                        android:onClick="onClickLeaveApplication"
                         android:layout_marginLeft="@dimen/_10sdp"
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_90sdp"
@@ -323,9 +330,10 @@
                             <TextView
                                 android:padding="@dimen/_5sdp"
                                 android:layout_gravity="center"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
+                                android:gravity="center"
                                 android:layout_height="wrap_content"
-                                android:text="Feedback"
+                                android:text="Leave Application"
                                 android:textColor="#fff"
                                 android:textStyle="normal"
                                 android:textSize="@dimen/_11sdp"

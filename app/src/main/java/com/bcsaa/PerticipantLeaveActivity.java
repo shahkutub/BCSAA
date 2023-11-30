@@ -48,7 +48,7 @@ public class PerticipantLeaveActivity extends AppCompatActivity {
             myListData.add(routineData);
         }
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewLive);
         MyListAdapter adapter = new MyListAdapter(myListData);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

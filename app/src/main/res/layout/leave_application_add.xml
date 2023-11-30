@@ -10,6 +10,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:padding="@dimen/_5sdp"
             android:id="@+id/imgBack"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"

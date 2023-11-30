@@ -14,6 +14,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:padding="@dimen/_5sdp"
             android:id="@+id/imgBack"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"
@@ -51,7 +52,7 @@
             android:layout_width="@dimen/_230sdp"
             android:layout_height="@dimen/_40sdp"
             android:text="Course Name"
-            android:background="#5A6268"
+            android:background="@drawable/shdow_top_bg"
             android:gravity="center"
             android:textColor="#fff"
             />
@@ -60,7 +61,7 @@
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_40sdp"
             android:text="Batch No"
-            android:background="#5A6268"
+            android:background="@drawable/shdow_top_bg"
             android:gravity="center"
             android:textColor="#fff"
             android:layout_marginLeft="@dimen/_1sdp"
@@ -72,7 +73,7 @@
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_40sdp"
             android:text="Action"
-            android:background="#5A6268"
+            android:background="@drawable/shdow_top_bg"
             android:gravity="center"
             android:textColor="#fff"
             android:layout_marginLeft="@dimen/_1sdp"
