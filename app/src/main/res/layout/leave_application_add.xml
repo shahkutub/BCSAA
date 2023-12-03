@@ -57,7 +57,7 @@
 
 
     <LinearLayout
-        android:layout_margin="@dimen/_5sdp"
+        android:layout_margin="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_margin="@dimen/_5sdp"
+        android:layout_margin="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
@@ -176,7 +176,7 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_margin="@dimen/_5sdp"
+        android:layout_margin="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
@@ -200,15 +200,14 @@
                 android:id="@+id/etPurpose"
                 android:layout_width="match_parent"
                 android:paddingLeft="@dimen/_5sdp"
-                android:inputType="textCapSentences"
+                android:inputType="textImeMultiLine"
                 android:background="@drawable/spinner_bg"
-                android:gravity="center"
+                android:gravity="start"
                 android:textColor="#000"
                 android:textSize="@dimen/_15sdp"
-                android:layout_height="@dimen/_40sdp" />
+                android:layout_height="@dimen/_100sdp" />
 
         </LinearLayout>
-
 
     </LinearLayout>
 

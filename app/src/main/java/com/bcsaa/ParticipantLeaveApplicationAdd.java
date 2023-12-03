@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -104,6 +105,7 @@ public class ParticipantLeaveApplicationAdd extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 getDate(etEndDate);
+
             }
         });
 
@@ -275,7 +277,7 @@ public class ParticipantLeaveApplicationAdd extends AppCompatActivity{
 
     }
 
-    private void getDate(final TextView etStartDate) {
+    private void getDate(final TextView etDate) {
          Calendar newCalendar = Calendar.getInstance();
         DatePickerDialog StartTime = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -285,12 +287,25 @@ public class ParticipantLeaveApplicationAdd extends AppCompatActivity{
                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
                 String strDate= formatter.format(newDate.getTime());
 
-                etStartDate.setText(strDate);
+                etDate.setText(strDate);
+
+                if(!etStartDate.getText().toString().isEmpty() && !etEndDate.getText().toString().isEmpty()){
+                    boolean isDateAfter =  AppConstant.isDateAfter(etStartDate.getText().toString(),etEndDate.getText().toString());
+                    Log.e("isDateAfter",""+isDateAfter);
+                    if (!isDateAfter){
+                        AlertMessage.showMessage(context,"Alert!","End date must be after start date.");
+                       // Toast.makeText(context,"End date must be after start date.",Toast.LENGTH_SHORT).show();
+                        etDate.setText("");
+                    }
+                }
             }
 
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
         StartTime.show();
+
+
+
     }
 
 

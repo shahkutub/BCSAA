@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -132,10 +133,13 @@ public class CourseContentActivity extends AppCompatActivity {
             holder.linView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    AppConstant.pdfurl= Api.BASE_URL+"api/participant-course-content-pdf/"+myListData.getDetail_id();
+                    Log.e("pdf",AppConstant.pdfurl);
                    // new Intent(Intent.ACTION_VIEW, Uri.parse(Api.BASE_URL+"api/participant-course-content-pdf/"+myListData.getDetail_id()));
 
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Api.BASE_URL+"api/participant-course-content-pdf/"+myListData.getDetail_id()));
                     startActivity(browserIntent);
+                    //startActivity(new Intent(context,CourseContentView.class));
                 }
 
             });

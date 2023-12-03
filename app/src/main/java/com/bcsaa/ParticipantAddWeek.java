@@ -35,6 +35,8 @@ import com.bcsaa.utils.NetInfo;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -130,11 +132,7 @@ public class ParticipantAddWeek extends AppCompatActivity {
                     if(participantWeeklyAttendancePlanViewRespons.getData()!= null){
 
 
-                        SpinnerModel select = new SpinnerModel();
-                        select.setName("Select week");
 
-
-                        listWeek.add(0,select);
 
                         for (ParticipantWeeklyAttendancePlanViewData data:participantWeeklyAttendancePlanViewRespons.getData()) {
                             SpinnerModel spinnerData = new SpinnerModel();
@@ -143,6 +141,11 @@ public class ParticipantAddWeek extends AppCompatActivity {
                             listWeek.add(spinnerData);
 
                         }
+                        Collections.reverse(listWeek);
+                        SpinnerModel select = new SpinnerModel();
+                        select.setName("Select week");
+                        listWeek.add(0,select);
+
 
                         CustomSpinnerAdapter spinneradapter = new CustomSpinnerAdapter(ParticipantAddWeek.this,
                                 R.layout.spinner_item, R.id.title, listWeek);
