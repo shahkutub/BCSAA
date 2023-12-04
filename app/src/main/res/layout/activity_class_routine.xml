@@ -26,10 +26,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Manage Class Routine"
             android:layout_centerInParent="true"
-            android:textColor="#fff"
-            />
+            android:text="Class Routine"
+            android:textColor="#fff" />
     </RelativeLayout>
 
     <HorizontalScrollView

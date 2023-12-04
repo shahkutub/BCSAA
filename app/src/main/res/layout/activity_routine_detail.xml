@@ -14,6 +14,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:padding="@dimen/_5sdp"
             android:id="@+id/imgBack"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"
@@ -23,12 +24,13 @@
             />
 
         <TextView
+            android:id="@+id/tvTopTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Details"
             android:layout_centerInParent="true"
+            android:text="Detail"
             android:textColor="#fff"
-            />
+            android:textSize="@dimen/_15sdp" />
     </RelativeLayout>
 
     <HorizontalScrollView
@@ -51,7 +53,7 @@
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Time"
-                    android:background="#5A6268"
+                    android:background="@drawable/shdow_top_bg"
                     android:gravity="center"
                     android:textColor="#fff"
                     />
@@ -60,7 +62,7 @@
                     android:layout_width="@dimen/_250sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Module"
-                    android:background="#5A6268"
+                    android:background="@drawable/shdow_top_bg"
                     android:gravity="center"
                     android:textColor="#fff"
                     android:layout_marginLeft="@dimen/_1sdp"
@@ -70,7 +72,7 @@
                     android:layout_width="@dimen/_300sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Session"
-                    android:background="#5A6268"
+                    android:background="@drawable/shdow_top_bg"
                     android:gravity="center"
                     android:textColor="#fff"
                     android:layout_marginLeft="@dimen/_1sdp"
@@ -80,7 +82,7 @@
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Trainer Name"
-                    android:background="#5A6268"
+                    android:background="@drawable/shdow_top_bg"
                     android:gravity="center"
                     android:textColor="#fff"
                     android:layout_marginLeft="@dimen/_1sdp"
@@ -90,7 +92,7 @@
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Building Name"
-                    android:background="#5A6268"
+                    android:background="@drawable/shdow_top_bg"
                     android:gravity="center"
                     android:textColor="#fff"
                     android:layout_marginLeft="@dimen/_1sdp"
@@ -100,7 +102,7 @@
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Venue Name"
-                    android:background="#5A6268"
+                    android:background="@drawable/shdow_top_bg"
                     android:gravity="center"
                     android:textColor="#fff"
                     android:layout_marginLeft="@dimen/_1sdp"

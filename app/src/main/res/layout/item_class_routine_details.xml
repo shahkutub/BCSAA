@@ -36,7 +36,7 @@
                 android:id="@+id/tvSession"
                 android:layout_width="@dimen/_300sdp"
                 android:layout_height="@dimen/_50sdp"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:background="@drawable/tv_bg"
                 android:ellipsize="end"
                 android:textColor="@android:color/black"

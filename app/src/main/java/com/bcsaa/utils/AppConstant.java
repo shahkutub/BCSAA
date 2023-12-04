@@ -19,6 +19,7 @@ public class AppConstant {
 
 
     public static String grouprandomRutine;
+    public static String routineDate;
     public static String sessionId;
     public static String weekId;
     public static LeaveInfo perticipantLeaveInfo = new LeaveInfo();

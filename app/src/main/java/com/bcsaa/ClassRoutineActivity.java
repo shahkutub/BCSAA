@@ -144,6 +144,7 @@ public class ClassRoutineActivity extends AppCompatActivity {
             holder.linView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    AppConstant.routineDate = myListData.getDate();
                     AppConstant.grouprandomRutine = myListData.getGrouprandom();
                     startActivity(new Intent(context,RoutineDetailActivity.class));
                 }

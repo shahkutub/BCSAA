@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bcsaa.model.CmtInfo;
@@ -67,10 +68,16 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
             tvUserName.setText(""+logged_session_data.getName());
         }
 
-
         TextView tvDate = (TextView)findViewById(R.id.tvDate);
         tvNameCourse = (TextView)findViewById(R.id.tvNameCourse);
         tvNameBach = (TextView)findViewById(R.id.tvNameBach);
+        RelativeLayout relNotifiView = (RelativeLayout)findViewById(R.id.relNotifiView);
+        relNotifiView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context,NotificationListActivity.class));
+            }
+        });
 //        tvMaleDress = (TextView)findViewById(R.id.tvMaleDress);
 //        tvFemaleDress = (TextView)findViewById(R.id.tvFemaleDress);
 

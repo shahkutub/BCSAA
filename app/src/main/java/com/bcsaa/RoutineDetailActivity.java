@@ -49,6 +49,8 @@ public class RoutineDetailActivity extends AppCompatActivity {
     private void initUi() {
 
         imgBack = (ImageView)findViewById(R.id.imgBack);
+        TextView tvTopTitle = (TextView)findViewById(R.id.tvTopTitle);
+        tvTopTitle.setText("Routine Detail: "+AppConstant.routineDate);
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
