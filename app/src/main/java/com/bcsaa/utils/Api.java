@@ -9,9 +9,12 @@ import com.bcsaa.model.ClassRoutineResponse;
 import com.bcsaa.model.CommonData;
 import com.bcsaa.model.CommonResponse;
 import com.bcsaa.model.EmployeeLeaveListResponse;
+import com.bcsaa.model.FeedbackListResponse;
+import com.bcsaa.model.FeedbackListResponseItem;
 import com.bcsaa.model.LeaveSubstituteEmployeeResponse;
 import com.bcsaa.model.Leave_substitute_post;
 import com.bcsaa.model.LoginResponse;
+import com.bcsaa.model.NotificationResponse;
 import com.bcsaa.model.PartiSpeakerEvaluAddResponse;
 import com.bcsaa.model.PartiSpeakerEvaluResponse;
 import com.bcsaa.model.ParticipantCourseContentResponse;
@@ -32,9 +35,9 @@ import retrofit2.http.Url;
 
 public interface Api {
 
-    String BASE_URL = "https://erp.bcsadminacademy.gov.bd/";
+    //String BASE_URL = "https://erp.bcsadminacademy.gov.bd/";
     //String BASE_URL = "http://nanosoftbd.com/bcsaa/";
-    //String BASE_URL = "http://123.49.41.11/";
+    String BASE_URL = "http://192.168.68.147/bcsaa/";
 
 
     @FormUrlEncoded
@@ -144,6 +147,26 @@ public interface Api {
             @Field("auth_data") String auth_data
     );
 
+     @FormUrlEncoded
+        @POST("api/get-notifications")
+        Call<NotificationResponse> participant_notifications(
+                @Field("auth_data") String auth_data
+        );
+        @FormUrlEncoded
+                @POST("api/participant-feedback-api-view")
+                Call<FeedbackListResponse> participant_feedback_list(
+                        @Field("auth_data") String auth_data
+                );
+
+    @FormUrlEncoded
+    @POST("api/participant-feedback-api-store")
+    Call<FeedbackListResponseItem> participant_feedback_add(
+            @Field("auth_data") String auth_data,
+            @Field("subject") String subject,
+            @Field("description") String description
+    );
+
+
 
     @FormUrlEncoded
     @POST("api/participant-speaker-evaluation")
@@ -207,7 +230,6 @@ public interface Api {
             @Field("auth_data") String auth_data,
             @Field("action_id") String action_id
     );
-
 
 
 

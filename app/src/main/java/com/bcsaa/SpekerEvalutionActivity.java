@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -133,6 +134,7 @@ public class SpekerEvalutionActivity extends AppCompatActivity {
             public void onResponse(Call<PartiSpeakerEvaluResponse> call, Response<PartiSpeakerEvaluResponse> response) {
                 pd.dismiss();
                 partiSpeakerEvaluResponse =response.body();
+                Log.e("SpeakerEvaluResponse",""+partiSpeakerEvaluResponse.toString());
 
                 if(partiSpeakerEvaluResponse!=null){
                     if(partiSpeakerEvaluResponse.getData()!= null){

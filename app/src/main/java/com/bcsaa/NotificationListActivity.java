@@ -1,5 +1,6 @@
 package com.bcsaa;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,10 +14,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bcsaa.model.EmplyeeInfo;
+import com.bcsaa.model.NotificationResponse;
+import com.bcsaa.model.NotificationResponseItem;
+import com.bcsaa.utils.AlertMessage;
+import com.bcsaa.utils.Api;
 import com.bcsaa.utils.AppConstant;
+import com.bcsaa.utils.NetInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NotificationListActivity extends AppCompatActivity {
 
@@ -65,19 +77,58 @@ public class NotificationListActivity extends AppCompatActivity {
         list.add(info1);
 
 
-        MyListAdapter adapter = new MyListAdapter(list);
-        recyclerViewNotification.setHasFixedSize(true);
-        recyclerViewNotification.setLayoutManager(new LinearLayoutManager(context));
-        recyclerViewNotification.setAdapter(adapter);
-
+//        MyListAdapter adapter = new MyListAdapter(list);
+//        recyclerViewNotification.setHasFixedSize(true);
+//        recyclerViewNotification.setLayoutManager(new LinearLayoutManager(context));
+//        recyclerViewNotification.setAdapter(adapter);
+        getParticipant_notification();
     }
 
+    private void getParticipant_notification() {
 
+        if(!NetInfo.isOnline(context)){
+            AlertMessage.showMessage(context,"Alert!","No internet connection!");
+        }
+
+        final ProgressDialog pd = new ProgressDialog(context);
+        pd.setMessage("Loading....");
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        Api api = retrofit.create(Api.class);
+        Call<NotificationResponse> userCall = api.participant_notifications("{\"logged_session_data\": "+ AppConstant.getLogged_session_data(context)+"}");
+        userCall.enqueue(new Callback<NotificationResponse>() {
+            @Override
+            public void onResponse(Call<NotificationResponse> call, Response<NotificationResponse> response) {
+                pd.dismiss();
+                NotificationResponse  prticipantNotificatiton =response.body();
+
+                if(prticipantNotificatiton!=null){
+                    if(prticipantNotificatiton.size()>0 ){
+                        MyListAdapter adapter = new MyListAdapter(prticipantNotificatiton);
+                        recyclerViewNotification.setHasFixedSize(true);
+                        recyclerViewNotification.setLayoutManager(new LinearLayoutManager(context));
+                        recyclerViewNotification.setAdapter(adapter);
+                        }
+                    }
+            }
+            @Override
+            public void onFailure(Call<NotificationResponse> call, Throwable t) {
+                pd.dismiss();
+            }
+        });
+
+    }
     private class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
-        private List<EmplyeeInfo> listdata = new ArrayList<>();
+        private List<NotificationResponseItem> listdata = new ArrayList<>();
 
         // RecyclerView recyclerView;
-        public MyListAdapter(List<EmplyeeInfo> listdata) {
+        public MyListAdapter(List<NotificationResponseItem> listdata) {
             this.listdata = listdata;
         }
         @Override
@@ -90,15 +141,10 @@ public class NotificationListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            final EmplyeeInfo myListData = listdata.get(position);
-//
-//            holder.tvName.setText(myListData.getName());
-//            holder.tvEmail.setText(myListData.getEmail());
-//            holder.tvContact.setText(myListData.getContact());
-//            holder.tvPost.setText(myListData.getPost());
-//            holder.tvDepartment.setText(myListData.getDepartment());
-//            holder.tvTimePeriod.setText(myListData.getTime_period());
+            final NotificationResponseItem myListData = listdata.get(position);
 
+            holder.tvTitle.setText(myListData.getData().getMessage());
+            holder.tvContent.setText(""+myListData.getData().getUser_name());
 
         }
 
@@ -109,17 +155,13 @@ public class NotificationListActivity extends AppCompatActivity {
         }
 
         public  class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView tvName,tvEmail,tvContact,tvPost,tvDepartment,tvTimePeriod;
+            public TextView tvTitle,tvContent;
             // public LinearLayout linView;
             public ViewHolder(View itemView) {
                 super(itemView);
-//                this.tvName = (TextView) itemView.findViewById(R.id.tvName);
-//                this.tvEmail = (TextView) itemView.findViewById(R.id.tvEmail);
-//                this.tvContact = (TextView) itemView.findViewById(R.id.tvContact);
-//                this.tvPost = (TextView) itemView.findViewById(R.id.tvPost);
-//                this.tvDepartment = (TextView) itemView.findViewById(R.id.tvDepartment);
-//                this.tvTimePeriod = (TextView) itemView.findViewById(R.id.tvTimePeriod);
-               // tvSession.setMovementMethod(new ScrollingMovementMethod());
+                this.tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
+                this.tvContent = (TextView) itemView.findViewById(R.id.tvContent);
+
             }
         }
     }

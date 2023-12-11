@@ -193,9 +193,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
 
-
-
-
             }
 
             @Override
@@ -203,7 +200,6 @@ public class LoginActivity extends AppCompatActivity {
                 pd.dismiss();
             }
         });
-
 
     }
 

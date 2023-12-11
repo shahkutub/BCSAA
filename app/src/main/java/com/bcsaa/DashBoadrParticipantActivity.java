@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.bcsaa.model.CmtInfo;
 import com.bcsaa.model.DailyDchedule;
 import com.bcsaa.model.Logged_session_data;
+import com.bcsaa.model.NotificationResponse;
 import com.bcsaa.model.ParticipantDashboardRespons;
 import com.bcsaa.utils.AlertMessage;
 import com.bcsaa.utils.Api;
@@ -45,7 +46,7 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawer;
-    private TextView tvNameCourse,tvNameBach;
+    private TextView tvNameCourse,tvNameBach,tvNotiCount;
             //tvMaleDress,tvFemaleDress;
     ParticipantDashboardRespons prticipantDashboardRespons;
     Logged_session_data logged_session_data ;
@@ -63,14 +64,17 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
         logged_session_data = AppConstant.getLoginUserdat(context);
 
         TextView tvUserName = (TextView)findViewById(R.id.tvUserName);
+        TextView tvNameDrawer = (TextView)findViewById(R.id.tvNameDrawer);
 
         if(AppConstant.getLoginUserdat(context)!=null){
             tvUserName.setText(""+logged_session_data.getName());
+            tvNameDrawer.setText(""+logged_session_data.getName());
         }
 
         TextView tvDate = (TextView)findViewById(R.id.tvDate);
         tvNameCourse = (TextView)findViewById(R.id.tvNameCourse);
         tvNameBach = (TextView)findViewById(R.id.tvNameBach);
+        tvNotiCount = (TextView)findViewById(R.id.tvNotiCount);
         RelativeLayout relNotifiView = (RelativeLayout)findViewById(R.id.relNotifiView);
         relNotifiView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +91,8 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
         SimpleDateFormat df = new SimpleDateFormat("EEE, d MMM , yy");
         String formattedDate = df.format(c);
         tvDate.setText(formattedDate);
+
+
         participant_dashboard();
 
     }
@@ -146,7 +152,7 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
     }
 
      public void onClickSpeakerEvaluation(View v){
-            startActivity(new Intent(context,SpekerEvalutionActivity.class));
+            startActivity(new Intent(context,FeedbackListActivity.class));
         }
 
      public void onClickLeaveApplication(View v){
@@ -162,6 +168,43 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
     }
 
 
+    private void getParticipant_notification() {
+
+        if(!NetInfo.isOnline(context)){
+            AlertMessage.showMessage(context,"Alert!","No internet connection!");
+        }
+
+        final ProgressDialog pd = new ProgressDialog(context);
+        pd.setMessage("Loading....");
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.show();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        Api api = retrofit.create(Api.class);
+        Call<NotificationResponse> userCall = api.participant_notifications("{\"logged_session_data\": "+ AppConstant.getLogged_session_data(context)+"}");
+        userCall.enqueue(new Callback<NotificationResponse>() {
+            @Override
+            public void onResponse(Call<NotificationResponse> call, Response<NotificationResponse> response) {
+                pd.dismiss();
+                NotificationResponse  prticipantNotificatiton =response.body();
+
+                if(prticipantNotificatiton!=null){
+                    if(prticipantNotificatiton.size()>0 ){
+                        tvNotiCount.setText(""+prticipantNotificatiton.size());
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<NotificationResponse> call, Throwable t) {
+                pd.dismiss();
+            }
+        });
+
+    }
     private void participant_dashboard() {
 
         if(!NetInfo.isOnline(context)){
@@ -212,7 +255,7 @@ public class DashBoadrParticipantActivity extends AppCompatActivity{
                     }
                 }
 
-
+                getParticipant_notification();
             }
             @Override
             public void onFailure(Call<ParticipantDashboardRespons> call, Throwable t) {
