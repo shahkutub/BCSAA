@@ -34,11 +34,9 @@ import retrofit2.http.POST;
 import retrofit2.http.Url;
 
 public interface Api {
-
-    //String BASE_URL = "https://erp.bcsadminacademy.gov.bd/";
+    String BASE_URL = "https://erp.bcsadminacademy.gov.bd/";
     //String BASE_URL = "http://nanosoftbd.com/bcsaa/";
-    String BASE_URL = "http://192.168.68.147/bcsaa/";
-
+    //String BASE_URL = "http://192.168.68.103/bcsaa/";
 
     @FormUrlEncoded
     @POST("api/login")

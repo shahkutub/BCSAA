@@ -166,31 +166,36 @@ public class LoginActivity extends AppCompatActivity {
                 Log.e("loginResponse: ", new Gson().toJson(loginrepons));
                 if(loginrepons!=null){
                     if(loginrepons.getLogged_session_data()!=null){
-                        Toast.makeText(context, ""+loginrepons.getSuccessmsg(), Toast.LENGTH_SHORT).show();
 
-                        if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
-                            PersistentUser.setLogin(context);
-                            AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                            startActivity(new Intent(context,DashBoadrParticipantActivity.class));
-                            //startActivity(new Intent(context,DashboardHRActivity.class));
-                            finish();
+                        if(loginrepons.getAuthentication_access().equalsIgnoreCase("yes")){
+                            if(loginrepons.getAuthentication_info()!=null){
+                                showAuthDialog();
+                            }
+                        }else{
+                            Toast.makeText(context, ""+loginrepons.getSuccessmsg(), Toast.LENGTH_SHORT).show();
 
-                        }else if (loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("1")){
-                            PersistentUser.setLogin(context);
-                            AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
-                            startActivity(new Intent(context,DashBoardFacultyActivity.class));
-                            //startActivity(new Intent(context,DashboardHRActivity.class));
-                            finish();
+                            if(loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("participant")){
+                                PersistentUser.setLogin(context);
+                                AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
+                                startActivity(new Intent(context,DashBoadrParticipantActivity.class));
+                                //startActivity(new Intent(context,DashboardHRActivity.class));
+                                finish();
+
+                            }else if (loginrepons.getLogged_session_data().getUsertype().equalsIgnoreCase("1")){
+//                            PersistentUser.setLogin(context);
+//                            AppConstant.saveLoginUserdat(context,loginrepons.getLogged_session_data());
+//                            startActivity(new Intent(context,DashBoardFacultyActivity.class));
+//                            //startActivity(new Intent(context,DashboardHRActivity.class));
+//                            finish();
+                            }
                         }
+
+
                     }else {
                         Toast.makeText(context, ""+loginrepons.getErrormsg(), Toast.LENGTH_SHORT).show();
                     }
 
-                    if(loginrepons.getAuthentication_access().equalsIgnoreCase("yes")){
-                        if(loginrepons.getAuthentication_info()!=null){
-                            showAuthDialog();
-                        }
-                    }
+
                 }
 
             }

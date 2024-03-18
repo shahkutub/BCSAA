@@ -268,8 +268,8 @@ public class ParticipantLeaveApplicationAdd extends AppCompatActivity{
         mTimePicker = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-               // etStartTime.setText( selectedHour + ":" + selectedMinute);
-                etStartTime.setText( new SimpleDateFormat("hh:mm a").format(mcurrentTime.getTime()));
+                etStartTime.setText( selectedHour + ":" + selectedMinute);
+               // etStartTime.setText( new SimpleDateFormat("hh:mm a").format(mcurrentTime.getTime()));
             }
         }, hour, minute, false);//Yes 24 hour time
         mTimePicker.setTitle("Select Time");

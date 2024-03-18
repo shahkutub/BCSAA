@@ -146,17 +146,16 @@ public class ClassRoutineActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     AppConstant.routineDate = myListData.getDate();
                     AppConstant.grouprandomRutine = myListData.getGrouprandom();
+                    Log.e("grouprandomRutine: ","grouprandomRutine: "+myListData.getGrouprandom());
                     startActivity(new Intent(context,RoutineDetailActivity.class));
                 }
             });
         }
 
-
         @Override
         public int getItemCount() {
             return listdata.size();
         }
-
         public  class ViewHolder extends RecyclerView.ViewHolder {
             public TextView tvDate,tvStartTime,tvEndTime;
             public LinearLayout linView;

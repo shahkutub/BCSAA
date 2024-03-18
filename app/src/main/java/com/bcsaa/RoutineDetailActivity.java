@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,6 +87,8 @@ public class RoutineDetailActivity extends AppCompatActivity {
                 pd.dismiss();
 
                 classRoutineDeatilseResponse =response.body();
+
+                Log.e("DeatilseResponse: ","classRoutineDeatilseResponse: "+classRoutineDeatilseResponse);
 
                 if(classRoutineDeatilseResponse!=null){
                     if(classRoutineDeatilseResponse.getData()!= null){
